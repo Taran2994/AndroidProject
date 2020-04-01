@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterationForm">
+
+    <TextView
+        android:id="@+id/textRegistration"
+        android:layout_width="290dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginRight="51dp"
+        android:foreground="#00DEFAF6"
+        android:gravity="center"
+        android:shadowColor="#00614141"
+        android:text="Registration Form"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#A6080909"
+        android:textFontWeight="@android:integer/config_longAnimTime"
+        app:fontFamily="monospace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/FirstName"
+        android:layout_width="179dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        android:text="Employee First Name"
+        app:layout_constraintEnd_toStartOf="@+id/FirstNamee"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textRegistration" />
+
+    <TextView
+        android:id="@+id/LastNamet"
+        android:layout_width="168dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="Employee Last Name"
+        app:layout_constraintEnd_toStartOf="@+id/LastNamee"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FirstName" />
+
+    <TextView
+        android:id="@+id/BirthYeart"
+        android:layout_width="169dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Employee Birth Year"
+        app:layout_constraintEnd_toStartOf="@+id/BirthYeare"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LastNamet" />
+
+    <TextView
+        android:id="@+id/MonthlySalaryt"
+        android:layout_width="168dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Monthly Salary"
+        app:layout_constraintEnd_toStartOf="@+id/MonthlySalarye"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BirthYeart" />
+
+    <TextView
+        android:id="@+id/OccupationRatet"
+        android:layout_width="159dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Occupation Rate"
+        app:layout_constraintEnd_toStartOf="@+id/Occupationratee"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MonthlySalaryt" />
+
+    <TextView
+        android:id="@+id/EmployeeId"
+        android:layout_width="172dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Employee Id"
+        app:layout_constraintEnd_toStartOf="@+id/EmployeeIde"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/OccupationRatet" />
+
+    <TextView
+        android:id="@+id/EmployeeTypet"
+        android:layout_width="165dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Employee Type"
+        app:layout_constraintEnd_toStartOf="@+id/spinner"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EmployeeId" />
+
+    <TextView
+        android:id="@+id/Vehiclet"
+        android:layout_width="179dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Vehicle"
+        app:layout_constraintEnd_toStartOf="@+id/radioGroup2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EmployeeTypet"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/VehicleModelt"
+        android:layout_width="173dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Vehicle Model"
+        app:layout_constraintEnd_toStartOf="@+id/editText7"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Vehiclet" />
+
+    <TextView
+        android:id="@+id/PlateNumbert"
+        android:layout_width="168dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="13dp"
+        android:gravity="center"
+        android:text="Plate Number"
+        app:layout_constraintEnd_toStartOf="@+id/editText8"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/VehicleModelt" />
+
+    <TextView
+        android:id="@+id/VehicleColort"
+        android:layout_width="170dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="14dp"
+        android:gravity="center"
+        android:text="Vehicle Color"
+        app:layout_constraintEnd_toStartOf="@+id/spinner2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PlateNumbert" />
+
+    <EditText
+        android:id="@+id/FirstNamee"
+        android:layout_width="165dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="First Name"
+        app:layout_constraintBottom_toTopOf="@+id/LastNamee"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/FirstName"
+        app:layout_constraintTop_toBottomOf="@+id/textRegistration"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/LastNamee"
+        android:layout_width="165dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="Last Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/LastNamet"
+        app:layout_constraintTop_toBottomOf="@+id/FirstNamee" />
+
+    <EditText
+        android:id="@+id/MonthlySalarye"
+        android:layout_width="165dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="Monthly Salary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/MonthlySalaryt"
+        app:layout_constraintTop_toBottomOf="@+id/BirthYeare" />
+
+    <EditText
+        android:id="@+id/BirthYeare"
+        android:layout_width="165dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="Birth Year"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/BirthYeart"
+        app:layout_constraintTop_toBottomOf="@+id/LastNamee" />
+
+    <EditText
+        android:id="@+id/Occupationratee"
+        android:layout_width="165dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Occupation Rate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/OccupationRatet"
+        app:layout_constraintTop_toBottomOf="@+id/MonthlySalarye" />
+
+    <EditText
+        android:id="@+id/EmployeeIde"
+        android:layout_width="165dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="Employee Id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/EmployeeId"
+        app:layout_constraintTop_toBottomOf="@+id/Occupationratee" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="170dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="16dp"
+        android:entries="@array/emp_type"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/EmployeeTypet"
+        app:layout_constraintTop_toBottomOf="@+id/EmployeeIde" />
+
+    <RadioButton
+        android:id="@+id/Nor"
+        android:layout_width="83dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:gravity="center"
+        android:text="No"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/yese"
+        tools:layout_editor_absoluteY="552dp" />
+
+    <EditText
+        android:id="@+id/editText7"
+        android:layout_width="165dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/VehicleModelt"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+
+    <Button
+        android:id="@+id/registerbutton"
+        android:layout_width="165dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="139dp"
+        android:layout_marginLeft="139dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="107dp"
+        android:layout_marginRight="107dp"
+        android:gravity="center"
+        android:text="Register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/VehicleColort" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="165dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:entries="@array/color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/VehicleColort"
+        app:layout_constraintTop_toBottomOf="@+id/editText8" />
+
+    <EditText
+        android:id="@+id/editText8"
+        android:layout_width="165dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/PlateNumbert"
+        app:layout_constraintTop_toBottomOf="@+id/editText7" />
+
+    <RadioButton
+        android:id="@+id/yese"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="219dp"
+        android:layout_marginLeft="219dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        android:text="Yes"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/Nor"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="552dp" />
+
+    <TextView
+        android:id="@+id/Sidebare"
+        android:layout_width="165dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="3dp"
+        android:text="Side Bar"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Vehiclet" />
+
+    <TextView
+        android:id="@+id/projectst"
+        android:layout_width="165dp"
+        android:layout_height="35dp"
+        android:text="#Projects"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/projectse"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EmployeeTypet" />
+
+    <TextView
+        android:id="@+id/clientst"
+        android:layout_width="165dp"
+        android:layout_height="35dp"
+        android:text="#Clients"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/clientse"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/projectst" />
+
+    <TextView
+        android:id="@+id/bugst"
+        android:layout_width="165dp"
+        android:layout_height="39dp"
+        android:text="#Bugs"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/bugse"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clientst" />
+
+    <EditText
+        android:id="@+id/projectse"
+        android:layout_width="165dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="3dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Number"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/projectst"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <EditText
+        android:id="@+id/clientse"
+        android:layout_width="165dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="3dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Number"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/clientst"
+        app:layout_constraintTop_toBottomOf="@+id/projectse" />
+
+    <EditText
+        android:id="@+id/bugse"
+        android:layout_width="165dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="3dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Number"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bugst"
+        app:layout_constraintTop_toBottomOf="@+id/clientse" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="160dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Vehiclet"
+        app:layout_constraintTop_toBottomOf="@+id/spinner">
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Car" />
+
+        <RadioButton
+            android:id="@+id/motorbikeradio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:text="Motor Bike" />
+
+    </RadioGroup>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

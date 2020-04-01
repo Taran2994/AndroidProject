@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string-array name="emp_type">
+        <item>Choose a type</item>
+        <item>Manager</item>
+        <item>Tester</item>
+        <item>Programmer</item>
+    </string-array>
+    <string-array name="color">
+        <item>choose a color</item>
+        <item>white</item>
+        <item>yellow</item>
+        <item>blue</item>
+        <item>black</item>
+
+
+    </string-array>
 </resources>
