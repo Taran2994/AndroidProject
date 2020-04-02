@@ -8,10 +8,18 @@
     </string-array>
     <string-array name="color">
         <item>choose a color</item>
-        <item>white</item>
-        <item>yellow</item>
-        <item>blue</item>
-        <item>black</item>
+        <item>White</item>
+        <item>Yellow</item>
+        <item>Blue</item>
+        <item>Black</item>
+        <item>Red</item>
+        <item>Green</item>
+        <item>Orange</item>
+        <item>Purple</item>
+        <item>Pink</item>
+        <item>Brown</item>
+        <item>Beige</item>
+        <item>Silver</item>
 
 
     </string-array>
