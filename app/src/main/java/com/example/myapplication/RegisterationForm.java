@@ -6,14 +6,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 public class RegisterationForm extends AppCompatActivity {
 
     Spinner emptype;
-    TextView clientsTV, bugsTV, projectsTV;
-    EditText clientsET, bugsET, projectsET;
+    TextView clientsTV, bugsTV, projectsTV, carTypeTV, sideCarTV;
+    EditText clientsET, bugsET, projectsET, carTypeET;
+    RadioGroup vehType, sideCar;
 
 
     @Override
@@ -27,6 +29,13 @@ public class RegisterationForm extends AppCompatActivity {
         bugsET = findViewById(R.id.bugse);
         projectsET = findViewById(R.id.projectse);
         projectsTV = findViewById(R.id.projectst);
+        vehType = findViewById(R.id.radioGroup2);
+        carTypeET = findViewById(R.id.editText);
+        carTypeTV = findViewById(R.id.textView);
+        sideCar = findViewById(R.id.radioGroup);
+        sideCarTV = findViewById(R.id.Sidebare);
+        sideCar.setVisibility(View.GONE);
+        sideCarTV.setVisibility(View.GONE);
 
 
         emptype.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -78,6 +87,29 @@ public class RegisterationForm extends AppCompatActivity {
 
             }
         });
+
+        vehType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                {
+                    if (checkedId == R.id.radioButton) {
+                        carTypeET.setVisibility(View.VISIBLE);
+                        carTypeTV.setVisibility(View.VISIBLE);
+                        sideCar.setVisibility(View.GONE);
+                        sideCarTV.setVisibility(View.GONE);
+
+                    } else if (checkedId == R.id.motorbikeradio) {
+                        carTypeET.setVisibility(View.GONE);
+                        carTypeTV.setVisibility(View.GONE);
+                        sideCar.setVisibility(View.VISIBLE);
+                        sideCarTV.setVisibility(View.VISIBLE);
+
+                    }
+                }
+            }
+        });
+
+
     }
 
 
