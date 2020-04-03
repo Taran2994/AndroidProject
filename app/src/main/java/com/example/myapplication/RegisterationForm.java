@@ -15,9 +15,13 @@ public class RegisterationForm extends AppCompatActivity {
 
     Spinner emptype;
     TextView clientsTV, bugsTV, projectsTV, carTypeTV, sideCarTV;
-    EditText clientsET, bugsET, projectsET, carTypeET, firstNameET, lastNameET;
+    EditText clientsET, bugsET, projectsET, carTypeET, firstNameET, lastNameET, birthYearET, monthlySalaryET;
     RadioGroup vehType, sideCar;
     Button submit;
+
+    String name, empID, emploType, vehicleType, sideCarVal, carType, vehicleModel, plateNumber, vehicleColor;
+    int birthYear, numProj, numClients, numBugs;
+    double monthlySalary, ocpRate;
 
 
     @Override
@@ -41,6 +45,9 @@ public class RegisterationForm extends AppCompatActivity {
         submit=findViewById(R.id.registerbutton);
         firstNameET=findViewById(R.id.FirstNamee);
         lastNameET=findViewById(R.id.LastNamee);
+        birthYearET=findViewById(R.id.BirthYeare);
+        monthlySalaryET=findViewById(R.id.MonthlySalarye);
+
 
 
 
@@ -119,7 +126,7 @@ public class RegisterationForm extends AppCompatActivity {
             public void onClick(View v) {
                 if(emptype.getSelectedItem().toString().equalsIgnoreCase("Manager"))
                 {
-                 //  Employee e1= new Manager();
+               //   Employee e1= new Manager();
                 }
                else if(emptype.getSelectedItem().toString().equalsIgnoreCase("Tester"))
                 {
