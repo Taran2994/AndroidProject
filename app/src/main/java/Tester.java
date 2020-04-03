@@ -1,5 +1,6 @@
 public class Tester extends Employee {
     private int nbBugs;
+    private final double gain_Factor_Error = 10;
 
     public int getNbBugs() {
         return nbBugs;
@@ -12,5 +13,17 @@ public class Tester extends Employee {
     public Tester(String name, String age, int birthYear, double monthlySalary, double ocpRate, int nbBugs) {
         super(name, age, birthYear, monthlySalary, ocpRate);
         this.nbBugs=nbBugs;
+    }
+
+    @Override
+    public double annualIncome() {
+
+        double base = getBaseSalary();
+        double bonus = this.nbBugs * gain_Factor_Error;
+
+        double totalIncome = base + bonus;
+        return totalIncome;
+
+
     }
 }

@@ -4,12 +4,23 @@ public class Employee {
     private int birthYear;
     private double monthlySalary;
     private double ocpRate;
+    private double baseSalary;
+
+
+    public double getBaseSalary() {
+        return baseSalary;
+    }
+
+    public void setBaseSalary(double baseSalary) {
+        this.baseSalary = baseSalary;
+    }
 
     public Employee(String name, String age, int birthYear, double monthlySalary, double ocpRate) {
         this.name = name;
         this.age = age;
         this.birthYear = birthYear;
         this.monthlySalary = monthlySalary;
+
         if(ocpRate<10)
         {
             this.ocpRate=10.00;
@@ -21,6 +32,7 @@ public class Employee {
         else{
             this.ocpRate=ocpRate;
         }
+        baseSalary=this.monthlySalary*12*(this.ocpRate/100);
     }
 
     public String getName() {
@@ -64,4 +76,11 @@ public class Employee {
     public void setOcpRate(double ocpRate) {
         this.ocpRate = ocpRate;
     }
+
+    public double annualIncome()   //for subclasses to override
+    {
+        return 0;
+    }
+
 }
+
