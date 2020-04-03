@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -53,16 +54,15 @@ public class RegisterationForm extends AppCompatActivity {
         plateNumET=findViewById(R.id.editText8);
         vehColor=findViewById(R.id.spinner2);
 
-        fName= firstNameET.getText().toString();
-        lName=lastNameET.getText().toString();
-        birthYear=Integer.parseInt(birthYearET.getText().toString());
-        monthlySalary=Double.parseDouble(monthlySalaryET.getText().toString());
-        ocpRate= Double.parseDouble(ocpRateET.getText().toString());
-        empID=empIdET.getText().toString();
-        emploType=emptype.getSelectedItem().toString();
-        numProj=Integer.parseInt(projectsET.getText().toString());
-        numBugs= Integer.parseInt(bugsET.getText().toString());
-        numClients=Integer.parseInt(clientsET.getText().toString());
+
+
+
+
+
+
+       // int id= vehType.getCheckedRadioButtonId();
+       // RadioButton r=vehType.findViewById(id);
+        //vehicleType= r.getText().toString();
 
 
 
@@ -141,6 +141,24 @@ public class RegisterationForm extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fName= firstNameET.getText().toString();
+                lName=lastNameET.getText().toString();
+                birthYear=Integer.parseInt(birthYearET.getText().toString());
+                monthlySalary=Double.parseDouble(monthlySalaryET.getText().toString());
+                ocpRate= Double.parseDouble(ocpRateET.getText().toString());
+                empID=empIdET.getText().toString();
+                emploType=emptype.getSelectedItem().toString();
+                numProj=Integer.parseInt(projectsET.getText().toString());
+                numBugs= Integer.parseInt(bugsET.getText().toString());
+                numClients=Integer.parseInt(clientsET.getText().toString());
+                carType=carTypeET.getText().toString();
+                vehicleModel=vehModelET.getText().toString();
+                plateNumber=plateNumET.getText().toString();
+                vehicleColor=vehColor.getSelectedItem().toString();
+
+
+
+
                 if(emploType.equalsIgnoreCase("Manager"))
                 {
                //   Employee e1= new Manager();
