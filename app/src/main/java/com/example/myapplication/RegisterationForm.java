@@ -12,6 +12,8 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.sql.SQLOutput;
+
 public class RegisterationForm extends AppCompatActivity {
 
     Spinner emptype, vehColor;
@@ -60,9 +62,7 @@ public class RegisterationForm extends AppCompatActivity {
 
 
 
-       // int id= vehType.getCheckedRadioButtonId();
-       // RadioButton r=vehType.findViewById(id);
-        //vehicleType= r.getText().toString();
+
 
 
 
@@ -155,6 +155,17 @@ public class RegisterationForm extends AppCompatActivity {
                 vehicleModel=vehModelET.getText().toString();
                 plateNumber=plateNumET.getText().toString();
                 vehicleColor=vehColor.getSelectedItem().toString();
+
+                int id= vehType.getCheckedRadioButtonId();
+                RadioButton r=vehType.findViewById(id);
+                vehicleType= r.getText().toString();
+
+                int idd= sideCar.getCheckedRadioButtonId();
+                RadioButton ss=sideCar.findViewById(idd);
+                sideCarVal=ss.getText().toString();
+
+
+
 
 
 
