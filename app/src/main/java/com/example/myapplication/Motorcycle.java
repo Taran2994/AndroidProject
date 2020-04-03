@@ -1,3 +1,5 @@
+package com.example.myapplication;
+
 public class Motorcycle extends Vehicle {
     private String sidecar;
 

@@ -1,3 +1,5 @@
+package com.example.myapplication;
+
 public class Manager extends Employee {
     private int nbClients;
     private final double gain_Factor_Client = 500;

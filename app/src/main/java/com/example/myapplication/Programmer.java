@@ -1,3 +1,5 @@
+package com.example.myapplication;
+
 public class Programmer extends Employee {
     private int nbProjects;
     private final double gain_Factor_Projects = 200;

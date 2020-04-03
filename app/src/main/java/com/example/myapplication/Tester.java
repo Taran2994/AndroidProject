@@ -1,3 +1,5 @@
+package com.example.myapplication;
+
 public class Tester extends Employee {
     private int nbBugs;
     private final double gain_Factor_Error = 10;

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -14,8 +15,9 @@ public class RegisterationForm extends AppCompatActivity {
 
     Spinner emptype;
     TextView clientsTV, bugsTV, projectsTV, carTypeTV, sideCarTV;
-    EditText clientsET, bugsET, projectsET, carTypeET;
+    EditText clientsET, bugsET, projectsET, carTypeET, firstNameET, lastNameET;
     RadioGroup vehType, sideCar;
+    Button submit;
 
 
     @Override
@@ -36,6 +38,10 @@ public class RegisterationForm extends AppCompatActivity {
         sideCarTV = findViewById(R.id.Sidebare);
         sideCar.setVisibility(View.GONE);
         sideCarTV.setVisibility(View.GONE);
+        submit=findViewById(R.id.registerbutton);
+        firstNameET=findViewById(R.id.FirstNamee);
+        lastNameET=findViewById(R.id.LastNamee);
+
 
 
         emptype.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -106,6 +112,26 @@ public class RegisterationForm extends AppCompatActivity {
 
                     }
                 }
+            }
+        });
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(emptype.getSelectedItem().toString().equalsIgnoreCase("Manager"))
+                {
+                 //  Employee e1= new Manager();
+                }
+               else if(emptype.getSelectedItem().toString().equalsIgnoreCase("Tester"))
+                {
+                  //  Employee e1= new Tester();
+
+                }
+               else if(emptype.getSelectedItem().toString().equalsIgnoreCase("Programmer"))
+                {
+                 //   Employee e1= new Programmer();
+
+                }
+
             }
         });
 

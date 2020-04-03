@@ -1,3 +1,5 @@
+package com.example.myapplication;
+
 public class Car extends Vehicle {
 
     private String type;
