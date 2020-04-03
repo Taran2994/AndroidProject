@@ -10,9 +10,10 @@ public class Programmer extends Employee {
         this.nbProjects = nbProjects;
     }
 
-    public Programmer(String name, String age, int birthYear, double monthlySalary, double ocpRate, int nbProjects) {
-        super(name, age, birthYear, monthlySalary, ocpRate);
+    public Programmer(String name, String age, int birthYear, double monthlySalary, double ocpRate, String empType, int nbProjects) {
+        super(name,birthYear, monthlySalary, ocpRate, empType);
         this.nbProjects=nbProjects;
+        setAnnualSalary(annualIncome());
     }
     @Override
     public double annualIncome() {

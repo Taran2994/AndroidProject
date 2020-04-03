@@ -11,9 +11,10 @@ public class Manager extends Employee {
         this.nbClients = nbClients;
     }
 
-    public Manager(String name, String age, int birthYear, double monthlySalary, double ocpRate, int nbClients) {
-        super(name, age, birthYear, monthlySalary, ocpRate);
+    public Manager(String name, String age, int birthYear, double monthlySalary, double ocpRate, String empType, int nbClients) {
+        super(name, birthYear, monthlySalary, ocpRate,empType);
         this.nbClients = nbClients;
+        setAnnualSalary(annualIncome());
     }
 
     @Override

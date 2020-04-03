@@ -1,11 +1,32 @@
+import java.util.Calendar;
+
 public class Employee {
     private String name;
-    private String age;
+    private int age;
     private int birthYear;
     private double monthlySalary;
     private double ocpRate;
     private double baseSalary;
+    private int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+    private double annualSalary;
+    private String empType;
 
+    public String getEmpType() {
+        return empType;
+    }
+
+    public void setEmpType(String empType) {
+        this.empType = empType;
+    }
+
+
+    public double getAnnualSalary() {
+        return annualSalary;
+    }
+
+    public void setAnnualSalary(double annualSalary) {
+        this.annualSalary = annualSalary;
+    }
 
     public double getBaseSalary() {
         return baseSalary;
@@ -15,24 +36,22 @@ public class Employee {
         this.baseSalary = baseSalary;
     }
 
-    public Employee(String name, String age, int birthYear, double monthlySalary, double ocpRate) {
+    public Employee(String name, int birthYear, double monthlySalary, double ocpRate, String empType) {
         this.name = name;
-        this.age = age;
+        this.empType=empType;
+
         this.birthYear = birthYear;
+        this.age = this.currentYear - this.birthYear;
         this.monthlySalary = monthlySalary;
 
-        if(ocpRate<10)
-        {
-            this.ocpRate=10.00;
+        if (ocpRate < 10) {
+            this.ocpRate = 10.00;
+        } else if (ocpRate > 100) {
+            this.ocpRate = 100;
+        } else {
+            this.ocpRate = ocpRate;
         }
-        else if(ocpRate>100)
-        {
-            this.ocpRate=100;
-        }
-        else{
-            this.ocpRate=ocpRate;
-        }
-        baseSalary=this.monthlySalary*12*(this.ocpRate/100);
+        baseSalary = this.monthlySalary * 12 * (this.ocpRate / 100);
     }
 
     public String getName() {
@@ -43,13 +62,10 @@ public class Employee {
         this.name = name;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
-        this.age = age;
-    }
 
     public int getBirthYear() {
         return birthYear;
@@ -58,7 +74,6 @@ public class Employee {
     public void setBirthYear(int birthYear) {
         this.birthYear = birthYear;
     }
-
 
 
     public double getMonthlySalary() {

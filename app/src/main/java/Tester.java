@@ -10,9 +10,10 @@ public class Tester extends Employee {
         this.nbBugs = nbBugs;
     }
 
-    public Tester(String name, String age, int birthYear, double monthlySalary, double ocpRate, int nbBugs) {
-        super(name, age, birthYear, monthlySalary, ocpRate);
+    public Tester(String name, String age, int birthYear, double monthlySalary, double ocpRate, String empType, int nbBugs) {
+        super(name,birthYear, monthlySalary, ocpRate, empType);
         this.nbBugs=nbBugs;
+        setAnnualSalary(annualIncome());
     }
 
     @Override
