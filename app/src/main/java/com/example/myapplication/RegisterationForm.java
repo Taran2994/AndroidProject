@@ -13,9 +13,9 @@ import android.widget.TextView;
 
 public class RegisterationForm extends AppCompatActivity {
 
-    Spinner emptype;
+    Spinner emptype, vehColor;
     TextView clientsTV, bugsTV, projectsTV, carTypeTV, sideCarTV;
-    EditText clientsET, bugsET, projectsET, carTypeET, firstNameET, lastNameET, birthYearET, monthlySalaryET;
+    EditText clientsET, bugsET, projectsET, carTypeET, firstNameET, lastNameET, birthYearET, monthlySalaryET, ocpRateET,empIdET,vehModelET, plateNumET;
     RadioGroup vehType, sideCar;
     Button submit;
 
@@ -47,6 +47,11 @@ public class RegisterationForm extends AppCompatActivity {
         lastNameET=findViewById(R.id.LastNamee);
         birthYearET=findViewById(R.id.BirthYeare);
         monthlySalaryET=findViewById(R.id.MonthlySalarye);
+        ocpRateET=findViewById(R.id.Occupationratee);
+        empIdET=findViewById(R.id.EmployeeIde);
+        vehModelET=findViewById(R.id.editText7);
+        plateNumET=findViewById(R.id.editText8);
+        vehColor=findViewById(R.id.spinner2);
 
 
 
