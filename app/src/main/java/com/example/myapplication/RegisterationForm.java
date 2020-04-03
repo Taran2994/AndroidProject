@@ -19,7 +19,7 @@ public class RegisterationForm extends AppCompatActivity {
     RadioGroup vehType, sideCar;
     Button submit;
 
-    String name, empID, emploType, vehicleType, sideCarVal, carType, vehicleModel, plateNumber, vehicleColor;
+    String fName, lName , empID, emploType, vehicleType, sideCarVal, carType, vehicleModel, plateNumber, vehicleColor;
     int birthYear, numProj, numClients, numBugs;
     double monthlySalary, ocpRate;
 
@@ -52,6 +52,18 @@ public class RegisterationForm extends AppCompatActivity {
         vehModelET=findViewById(R.id.editText7);
         plateNumET=findViewById(R.id.editText8);
         vehColor=findViewById(R.id.spinner2);
+
+        fName= firstNameET.getText().toString();
+        lName=lastNameET.getText().toString();
+        birthYear=Integer.parseInt(birthYearET.getText().toString());
+        monthlySalary=Double.parseDouble(monthlySalaryET.getText().toString());
+        ocpRate= Double.parseDouble(ocpRateET.getText().toString());
+        empID=empIdET.getText().toString();
+        emploType=emptype.getSelectedItem().toString();
+        numProj=Integer.parseInt(projectsET.getText().toString());
+        numBugs= Integer.parseInt(bugsET.getText().toString());
+        numClients=Integer.parseInt(clientsET.getText().toString());
+
 
 
 
@@ -129,16 +141,16 @@ public class RegisterationForm extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(emptype.getSelectedItem().toString().equalsIgnoreCase("Manager"))
+                if(emploType.equalsIgnoreCase("Manager"))
                 {
                //   Employee e1= new Manager();
                 }
-               else if(emptype.getSelectedItem().toString().equalsIgnoreCase("Tester"))
+               else if(emploType.equalsIgnoreCase("Tester"))
                 {
                   //  Employee e1= new Tester();
 
                 }
-               else if(emptype.getSelectedItem().toString().equalsIgnoreCase("Programmer"))
+               else if(emploType.equalsIgnoreCase("Programmer"))
                 {
                  //   Employee e1= new Programmer();
 
