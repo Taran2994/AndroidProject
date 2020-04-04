@@ -12,8 +12,8 @@ public class Tester extends Employee {
         this.nbBugs = nbBugs;
     }
 
-    public Tester(String name, String age, int birthYear, double monthlySalary, double ocpRate, String empType, int nbBugs) {
-        super(name,birthYear, monthlySalary, ocpRate, empType);
+    public Tester(String name, int birthYear, double monthlySalary, double ocpRate,  String empID, String empType, Vehicle vehicle, int nbBugs) {
+        super(name,birthYear, monthlySalary, ocpRate, empID, empType,vehicle);
         this.nbBugs=nbBugs;
         setAnnualSalary(annualIncome());
     }

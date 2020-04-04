@@ -25,6 +25,7 @@ public class RegisterationForm extends AppCompatActivity {
     String fName, lName , empID, emploType, vehicleType, sideCarVal, carType, vehicleModel, plateNumber, vehicleColor;
     int birthYear, numProj, numClients, numBugs;
     double monthlySalary, ocpRate;
+    Vehicle vehicle;
 
 
     @Override
@@ -143,6 +144,7 @@ public class RegisterationForm extends AppCompatActivity {
             public void onClick(View v) {
                 fName= firstNameET.getText().toString();
                 lName=lastNameET.getText().toString();
+                String fullName= fName+" "+lName;
                 birthYear=Integer.parseInt(birthYearET.getText().toString());
                 monthlySalary=Double.parseDouble(monthlySalaryET.getText().toString());
                 ocpRate= Double.parseDouble(ocpRateET.getText().toString());
@@ -164,6 +166,15 @@ public class RegisterationForm extends AppCompatActivity {
                 RadioButton ss=sideCar.findViewById(idd);
                 sideCarVal=ss.getText().toString();
 
+                if(vehicleType.equalsIgnoreCase("Car"))
+                {
+                    vehicle= new Car(vehicleModel,plateNumber,vehicleColor,vehicleType,carType);
+
+                }
+                else{
+                    vehicle= new Motorcycle(vehicleModel,plateNumber,vehicleColor,vehicleType,sideCarVal);
+                }
+
 
 
 
@@ -172,16 +183,17 @@ public class RegisterationForm extends AppCompatActivity {
 
                 if(emploType.equalsIgnoreCase("Manager"))
                 {
-               //   Employee e1= new Manager();
+
+                  Employee e1= new Manager(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numClients);
                 }
                else if(emploType.equalsIgnoreCase("Tester"))
                 {
-                  //  Employee e1= new Tester();
+                    Employee e1= new Tester(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numBugs);
 
                 }
                else if(emploType.equalsIgnoreCase("Programmer"))
                 {
-                 //   Employee e1= new Programmer();
+                   Employee e1= new Programmer(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numProj);
 
                 }
 

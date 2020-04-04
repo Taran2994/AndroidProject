@@ -12,8 +12,8 @@ public class Programmer extends Employee {
         this.nbProjects = nbProjects;
     }
 
-    public Programmer(String name, String age, int birthYear, double monthlySalary, double ocpRate, String empType, int nbProjects) {
-        super(name,birthYear, monthlySalary, ocpRate, empType);
+    public Programmer(String name, int birthYear, double monthlySalary, double ocpRate, String empID, String empType, Vehicle vehicle,int nbProjects) {
+        super(name,birthYear, monthlySalary, ocpRate,  empID, empType, vehicle);
         this.nbProjects=nbProjects;
         setAnnualSalary(annualIncome());
     }
