@@ -26,6 +26,7 @@ public class RegisterationForm extends AppCompatActivity {
     int birthYear, numProj, numClients, numBugs;
     double monthlySalary, ocpRate;
     Vehicle vehicle;
+    Employee employee;
 
 
     @Override
@@ -184,18 +185,24 @@ public class RegisterationForm extends AppCompatActivity {
                 if(emploType.equalsIgnoreCase("Manager"))
                 {
 
-                  Employee e1= new Manager(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numClients);
+                  employee= new Manager(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numClients);
                 }
                else if(emploType.equalsIgnoreCase("Tester"))
                 {
-                    Employee e1= new Tester(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numBugs);
+                    employee = new Tester(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numBugs);
 
                 }
                else if(emploType.equalsIgnoreCase("Programmer"))
                 {
-                   Employee e1= new Programmer(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numProj);
+                   employee = new Programmer(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numProj);
 
                 }
+
+
+               SingletonClass singlobj= SingletonClass.getInstance();
+               singlobj.emplist.add(employee);
+
+
 
             }
         });

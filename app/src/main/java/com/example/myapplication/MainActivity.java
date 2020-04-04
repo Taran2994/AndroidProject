@@ -18,4 +18,19 @@ public class MainActivity extends AppCompatActivity {
            startActivity(intent);
 
     }
+    public void print(View view)
+    {
+
+       SingletonClass singlobj= SingletonClass.getInstance();
+        //System.out.println("The size is "+ singlobj.emplist.size());
+      for(int i=0;i<singlobj.emplist.size();i++)
+        {
+           Employee emp= singlobj.emplist.get(i);
+            System.out.println(emp.getName());
+            System.out.println(emp.getEmpType());
+        }
+
+
+
+    }
 }
