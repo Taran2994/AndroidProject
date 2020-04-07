@@ -65,9 +65,9 @@ public class EmpDetail extends AppCompatActivity {
         }
 
 
-        content.setText("Name :" + name + ", a " + emptype + "\n ID :" + id + "\n Age :" + age + "\n Employee has a " + vehtype + "\n" +
-                        " - Model :"+model+"\n - Plate number :"+plate+"\n - Color :"+color+"\n "+extra+"\n Occupation Rate :"+ocpRate+"\n Annual Income :$ "
-                        +annualIncome+"\n He/She has "+empExtra
+        content.setText("Name :" + name + ", a " + emptype + "\nID :" + id + "\nAge :" + age + "\nEmployee has a " + vehtype + "\n" +
+                        " - Model :"+model+"\n - Plate number :"+plate+"\n - Color :"+color+"\n "+extra+"\nOccupation Rate :"+ocpRate+"\nAnnual Income :$ "
+                        +annualIncome+"\nHe/She has "+empExtra
                          );
 
 

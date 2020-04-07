@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EmpDetail"
-    android:orientation="vertical">
+    android:background="#37B975DF"
+    android:orientation="vertical"
+    tools:context=".EmpDetail">
 
 
     <TextView
         android:id="@+id/contentTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:background="#71AB46E3"
+        android:text="xsxsxsx"
+        android:textSize="18sp" />
 </LinearLayout>
