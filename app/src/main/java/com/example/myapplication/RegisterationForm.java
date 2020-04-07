@@ -202,6 +202,9 @@ public class RegisterationForm extends AppCompatActivity {
                SingletonClass singlobj= SingletonClass.getInstance();
                singlobj.emplist.add(employee);
 
+                finish();
+                startActivity(getIntent());
+
 
 
             }

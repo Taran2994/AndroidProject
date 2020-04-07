@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         listView = findViewById(R.id.listview);
 
 
+
     }
 
     @Override
@@ -29,7 +31,20 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         EmployeeAdapter empAdapter = new EmployeeAdapter(this, R.layout.emp_adapter_layout, emlist);
         listView.setAdapter(empAdapter);
-       
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent intent= new Intent(MainActivity.this, EmpDetail.class);
+                intent.putExtra("empPosition", position);
+                startActivity(intent);
+
+
+            }
+        });
+
+
 
     }
 
