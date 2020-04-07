@@ -20,7 +20,7 @@ public class EmployeeAdapter extends ArrayAdapter {
 
 
     public EmployeeAdapter(@NonNull Context context, int resource, ArrayList<Employee> list) {
-        super(context, resource,list);
+        super(context, resource, list);
         this.list = list;
         this.layoutInflater = LayoutInflater.from(context);
         this.layoutResource = resource;
@@ -37,6 +37,7 @@ public class EmployeeAdapter extends ArrayAdapter {
 
         nameVal.setText(list.get(position).getName());
         idVal.setText(list.get(position).getEmpID());
+
         return v;
 
 

@@ -18,8 +18,8 @@ public class Tester extends Employee {
         setAnnualSalary(annualIncome());
     }
 
-    @Override
-    public double annualIncome() {
+
+    private double annualIncome() {
 
         double base = getBaseSalary();
         double bonus = this.nbBugs * gain_Factor_Error;

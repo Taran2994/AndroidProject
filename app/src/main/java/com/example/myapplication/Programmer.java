@@ -17,8 +17,8 @@ public class Programmer extends Employee {
         this.nbProjects=nbProjects;
         setAnnualSalary(annualIncome());
     }
-    @Override
-    public double annualIncome() {
+
+    private double annualIncome() {
 
         double base = getBaseSalary();
         double bonus = this.nbProjects * gain_Factor_Projects;

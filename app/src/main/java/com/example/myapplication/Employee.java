@@ -114,10 +114,7 @@ public class Employee {
         this.ocpRate = ocpRate;
     }
 
-    public double annualIncome()   //for subclasses to override
-    {
-        return 0;
-    }
+
 
 }
 

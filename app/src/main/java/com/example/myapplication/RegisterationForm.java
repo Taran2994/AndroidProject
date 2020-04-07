@@ -29,6 +29,7 @@ public class RegisterationForm extends AppCompatActivity {
     Employee employee;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -167,12 +168,14 @@ public class RegisterationForm extends AppCompatActivity {
                 RadioButton ss=sideCar.findViewById(idd);
                 sideCarVal=ss.getText().toString();
 
+
+
                 if(vehicleType.equalsIgnoreCase("Car"))
                 {
                     vehicle= new Car(vehicleModel,plateNumber,vehicleColor,vehicleType,carType);
 
                 }
-                else{
+                else if(vehicleType.equalsIgnoreCase("Motor Bike")){
                     vehicle= new Motorcycle(vehicleModel,plateNumber,vehicleColor,vehicleType,sideCarVal);
                 }
 
@@ -186,21 +189,27 @@ public class RegisterationForm extends AppCompatActivity {
                 {
 
                   employee= new Manager(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numClients);
+
+
                 }
                else if(emploType.equalsIgnoreCase("Tester"))
                 {
                     employee = new Tester(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numBugs);
 
+
                 }
                else if(emploType.equalsIgnoreCase("Programmer"))
                 {
-                   employee = new Programmer(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numProj);
+                    employee = new Programmer(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numProj);
+
 
                 }
 
+                SingletonClass singlobj= SingletonClass.getInstance();
+                singlobj.emplist.add(employee);
 
-               SingletonClass singlobj= SingletonClass.getInstance();
-               singlobj.emplist.add(employee);
+
+
 
                 finish();
                 startActivity(getIntent());

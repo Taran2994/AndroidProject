@@ -19,8 +19,8 @@ public class Manager extends Employee {
         setAnnualSalary(annualIncome());
     }
 
-    @Override
-    public double annualIncome() {
+
+    private double annualIncome() {
 
         double base = getBaseSalary();
         double bonus = this.nbClients * gain_Factor_Client;
