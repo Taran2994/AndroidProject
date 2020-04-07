@@ -13,7 +13,9 @@
             android:id="@+id/nameConst"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="2dp"
             android:layout_weight="1"
             android:background="#A924F19E"
             android:gravity="center"
@@ -26,10 +28,9 @@
             android:layout_marginLeft="0dp"
             android:layout_marginTop="2dp"
             android:layout_marginRight="2dp"
-            android:layout_marginBottom="2dp"
             android:layout_weight="3"
             android:background="#2C24F19E"
-            android:gravity="center"></TextView>
+            android:gravity="left"></TextView>
 
     </LinearLayout>
 
@@ -41,9 +42,11 @@
             android:id="@+id/idConst"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="2dp"
             android:layout_weight="1"
-            android:background="#A924F19E"
+            android:background="#A524E0F1"
             android:gravity="center"
             android:text="ID :"></TextView>
 
@@ -52,12 +55,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="0dp"
-            android:layout_marginTop="2dp"
             android:layout_marginRight="2dp"
             android:layout_marginBottom="2dp"
             android:layout_weight="3"
-            android:background="#2C24F19E"
-            android:gravity="center"></TextView>
+            android:background="#2A24E0F1"
+            android:gravity="left"></TextView>
 
     </LinearLayout>
 
