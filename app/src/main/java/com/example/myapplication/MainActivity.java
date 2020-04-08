@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openn(View view) {
+
         Intent intent = new Intent(this, RegisterationForm.class);
         startActivity(intent);
 

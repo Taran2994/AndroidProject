@@ -3,17 +3,21 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class EmpDetail extends AppCompatActivity {
 
     TextView content;
+    Button delete;
+    int position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emp_detail);
-        int position = getIntent().getIntExtra("empPosition", -1);
+          position = getIntent().getIntExtra("empPosition", -1);
         content = findViewById(R.id.contentTV);
 
         SingletonClass obj = SingletonClass.getInstance();
@@ -28,10 +32,10 @@ public class EmpDetail extends AppCompatActivity {
         String model = veh1.getModel();
         String plate = veh1.getPlateNum();
         String color = veh1.getColor();
-        String extra="";
+        String extra = "";
         Double ocpRate = emp1.getOcpRate();
         Double annualIncome = emp1.getAnnualSalary();
-        String empExtra="";
+        String empExtra = "";
         int clientsNum, bugsNum, projectsNum;
 
         if (vehtype.equalsIgnoreCase("Motor Bike")) {
@@ -66,10 +70,18 @@ public class EmpDetail extends AppCompatActivity {
 
 
         content.setText("Name :" + name + ", a " + emptype + "\nID :" + id + "\nAge :" + age + "\nEmployee has a " + vehtype + "\n" +
-                        " - Model :"+model+"\n - Plate number :"+plate+"\n - Color :"+color+"\n "+extra+"\nOccupation Rate :"+ocpRate+"\nAnnual Income :$ "
-                        +annualIncome+"\nHe/She has "+empExtra
-                         );
+                " - Model :" + model + "\n - Plate number :" + plate + "\n - Color :" + color + "\n " + extra + "\nOccupation Rate :" + ocpRate + "\nAnnual Income :$ "
+                + annualIncome + "\nHe/She has " + empExtra
+        );
 
 
+
+
+    }
+
+    public void onDelClick(View v) {
+        finish();
+        SingletonClass obj1 = SingletonClass.getInstance();
+        obj1.emplist.remove(position);
     }
 }
