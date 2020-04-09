@@ -29,6 +29,7 @@
             android:layout_margin="1dp"
             android:layout_weight="1"
             android:background="#C4461B65"
+            android:onClick="onEditClick"
             android:text="Edit"
             android:textColor="#FFFFFF"></Button>
 

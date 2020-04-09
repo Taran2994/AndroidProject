@@ -12,12 +12,14 @@ public class EmpDetail extends AppCompatActivity {
     TextView content;
     Button delete;
     int position;
+    String emptype;
+    String vehtype;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emp_detail);
-          position = getIntent().getIntExtra("empPosition", -1);
+        position = getIntent().getIntExtra("empPosition", -1);
         content = findViewById(R.id.contentTV);
 
         SingletonClass obj = SingletonClass.getInstance();
@@ -27,8 +29,8 @@ public class EmpDetail extends AppCompatActivity {
         String name = emp1.getName();
         String id = emp1.getEmpID();
         int age = emp1.getAge();
-        String emptype = emp1.getEmpType();
-        String vehtype = veh1.getCategory();
+        emptype = emp1.getEmpType();
+        vehtype = veh1.getCategory();
         String model = veh1.getModel();
         String plate = veh1.getPlateNum();
         String color = veh1.getColor();
@@ -75,13 +77,23 @@ public class EmpDetail extends AppCompatActivity {
         );
 
 
-
-
     }
 
     public void onDelClick(View v) {
         finish();
         SingletonClass obj1 = SingletonClass.getInstance();
         obj1.emplist.remove(position);
+    }
+
+    public void onEditClick(View v) {
+        EditDetails editDetails = new EditDetails();
+        Bundle bundle = new Bundle();
+        bundle.putInt("Position", position);
+        bundle.putString("EmpType",emptype);
+        bundle.putString("VehType",vehtype);
+        editDetails.setArguments(bundle);
+        editDetails.show(getSupportFragmentManager(), "Edit Details");
+
+
     }
 }
