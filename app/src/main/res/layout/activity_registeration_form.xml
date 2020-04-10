@@ -45,7 +45,7 @@
 
             <TextView
                 android:id="@+id/FirstName"
-                android:layout_width="179dp"
+                android:layout_width="204dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="3dp"
                 android:gravity="center"
@@ -57,7 +57,7 @@
 
             <TextView
                 android:id="@+id/LastNamet"
-                android:layout_width="168dp"
+                android:layout_width="204dp"
                 android:layout_height="47dp"
                 android:layout_marginTop="16dp"
                 android:gravity="center_horizontal"
@@ -69,7 +69,7 @@
 
             <TextView
                 android:id="@+id/BirthYeart"
-                android:layout_width="169dp"
+                android:layout_width="204dp"
                 android:layout_height="42dp"
                 android:layout_marginTop="16dp"
                 android:gravity="center"
@@ -81,7 +81,7 @@
 
             <TextView
                 android:id="@+id/MonthlySalaryt"
-                android:layout_width="168dp"
+                android:layout_width="204dp"
                 android:layout_height="45dp"
                 android:layout_marginTop="16dp"
                 android:gravity="center"
@@ -93,7 +93,7 @@
 
             <TextView
                 android:id="@+id/OccupationRatet"
-                android:layout_width="159dp"
+                android:layout_width="204dp"
                 android:layout_height="44dp"
                 android:layout_marginTop="16dp"
                 android:gravity="center"
@@ -105,7 +105,7 @@
 
             <TextView
                 android:id="@+id/EmployeeId"
-                android:layout_width="172dp"
+                android:layout_width="204dp"
                 android:layout_height="47dp"
                 android:layout_marginTop="16dp"
                 android:gravity="center"
@@ -117,7 +117,7 @@
 
             <TextView
                 android:id="@+id/EmployeeTypet"
-                android:layout_width="165dp"
+                android:layout_width="204dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="16dp"
                 android:gravity="center"
@@ -129,9 +129,9 @@
 
             <TextView
                 android:id="@+id/Vehiclet"
-                android:layout_width="183dp"
+                android:layout_width="204dp"
                 android:layout_height="57dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="32dp"
                 android:gravity="center"
                 android:text="Vehicle"
                 app:layout_constraintEnd_toStartOf="@+id/radioGroup2"
@@ -141,7 +141,7 @@
 
             <TextView
                 android:id="@+id/VehicleModelt"
-                android:layout_width="173dp"
+                android:layout_width="204dp"
                 android:layout_height="42dp"
                 android:layout_marginTop="24dp"
                 android:gravity="center"
@@ -153,7 +153,7 @@
 
             <TextView
                 android:id="@+id/PlateNumbert"
-                android:layout_width="168dp"
+                android:layout_width="204dp"
                 android:layout_height="42dp"
                 android:layout_marginTop="13dp"
                 android:gravity="center"
@@ -165,7 +165,7 @@
 
             <TextView
                 android:id="@+id/VehicleColort"
-                android:layout_width="170dp"
+                android:layout_width="204dp"
                 android:layout_height="39dp"
                 android:layout_marginTop="20dp"
                 android:gravity="center"
@@ -177,27 +177,21 @@
 
             <EditText
                 android:id="@+id/FirstNamee"
-                android:layout_width="165dp"
+                android:layout_width="204dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="6dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="textPersonName"
                 android:text="First Name"
-                app:layout_constraintBottom_toTopOf="@+id/LastNamee"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/FirstName"
-                app:layout_constraintTop_toBottomOf="@+id/textRegistration"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintTop_toBottomOf="@+id/textRegistration" />
 
             <EditText
                 android:id="@+id/LastNamee"
-                android:layout_width="165dp"
+                android:layout_width="204dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:gravity="center"
@@ -210,7 +204,7 @@
 
             <EditText
                 android:id="@+id/MonthlySalarye"
-                android:layout_width="165dp"
+                android:layout_width="204dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:ems="10"
@@ -224,7 +218,7 @@
 
             <EditText
                 android:id="@+id/BirthYeare"
-                android:layout_width="165dp"
+                android:layout_width="204dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:ems="10"
@@ -238,7 +232,7 @@
 
             <EditText
                 android:id="@+id/Occupationratee"
-                android:layout_width="165dp"
+                android:layout_width="204dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:ems="10"
@@ -252,7 +246,7 @@
 
             <EditText
                 android:id="@+id/EmployeeIde"
-                android:layout_width="165dp"
+                android:layout_width="204dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:ems="10"
@@ -266,7 +260,7 @@
 
             <Spinner
                 android:id="@+id/spinner"
-                android:layout_width="170dp"
+                android:layout_width="204dp"
                 android:layout_height="36dp"
                 android:layout_marginTop="16dp"
                 android:entries="@array/emp_type"
@@ -278,7 +272,7 @@
 
             <EditText
                 android:id="@+id/editText7"
-                android:layout_width="165dp"
+                android:layout_width="204dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:ems="10"
@@ -307,7 +301,7 @@
 
             <Spinner
                 android:id="@+id/spinner2"
-                android:layout_width="165dp"
+                android:layout_width="204dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="20dp"
                 android:entries="@array/color"
@@ -319,7 +313,7 @@
 
             <EditText
                 android:id="@+id/editText8"
-                android:layout_width="165dp"
+                android:layout_width="204dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:ems="10"
@@ -333,20 +327,21 @@
 
             <TextView
                 android:id="@+id/Sidebare"
-                android:layout_width="163dp"
-                android:layout_height="46dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="40dp"
+                android:layout_width="173dp"
+                android:layout_height="37dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="36dp"
                 android:gravity="center"
                 android:text="Side Car"
                 android:visibility="visible"
+                app:layout_constraintEnd_toStartOf="@+id/radioGroup"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Vehiclet" />
 
             <TextView
                 android:id="@+id/projectst"
-                android:layout_width="167dp"
+                android:layout_width="204dp"
                 android:layout_height="49dp"
                 android:layout_marginTop="12dp"
                 android:gravity="center"
@@ -359,7 +354,7 @@
 
             <TextView
                 android:id="@+id/clientst"
-                android:layout_width="167dp"
+                android:layout_width="204dp"
                 android:layout_height="52dp"
                 android:layout_marginTop="12dp"
                 android:gravity="center"
@@ -372,7 +367,7 @@
 
             <TextView
                 android:id="@+id/bugst"
-                android:layout_width="175dp"
+                android:layout_width="204dp"
                 android:layout_height="54dp"
                 android:layout_marginTop="12dp"
                 android:gravity="center"
@@ -385,7 +380,7 @@
 
             <EditText
                 android:id="@+id/projectse"
-                android:layout_width="170dp"
+                android:layout_width="204dp"
                 android:layout_height="52dp"
                 android:layout_marginTop="12dp"
                 android:ems="10"
@@ -400,7 +395,7 @@
 
             <EditText
                 android:id="@+id/clientse"
-                android:layout_width="174dp"
+                android:layout_width="204dp"
                 android:layout_height="51dp"
                 android:layout_marginTop="12dp"
                 android:ems="10"
@@ -415,7 +410,7 @@
 
             <EditText
                 android:id="@+id/bugse"
-                android:layout_width="168dp"
+                android:layout_width="204dp"
                 android:layout_height="55dp"
                 android:layout_marginTop="12dp"
                 android:ems="10"
@@ -430,10 +425,8 @@
 
             <RadioGroup
                 android:id="@+id/radioGroup2"
-                android:layout_width="163dp"
+                android:layout_width="204dp"
                 android:layout_height="62dp"
-                android:layout_marginStart="22dp"
-                android:layout_marginLeft="22dp"
                 android:layout_marginTop="24dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -458,24 +451,22 @@
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="155dp"
+                android:layout_width="204dp"
                 android:layout_height="54dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="36dp"
                 android:gravity="center"
                 android:text="Car Type"
                 app:layout_constraintEnd_toStartOf="@+id/editText"
-                app:layout_constraintHorizontal_bias="0.321"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Sidebare"
                 tools:visibility="visible" />
 
             <EditText
                 android:id="@+id/editText"
-                android:layout_width="190dp"
+                android:layout_width="204dp"
                 android:layout_height="61dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginRight="32dp"
+                android:layout_marginTop="36dp"
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="textPersonName"
@@ -485,15 +476,16 @@
 
             <RadioGroup
                 android:id="@+id/radioGroup"
-                android:layout_width="157dp"
+                android:layout_width="204dp"
                 android:layout_height="46dp"
-                android:layout_marginStart="71dp"
-                android:layout_marginLeft="71dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="32dp"
                 android:layout_marginEnd="50dp"
                 android:layout_marginRight="50dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/Sidebare"
                 app:layout_constraintTop_toBottomOf="@+id/radioGroup2">
 
