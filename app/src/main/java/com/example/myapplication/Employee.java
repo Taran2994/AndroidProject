@@ -5,7 +5,7 @@ import java.util.Calendar;
 public class Employee {
     private String name;
     private int age;
-    private String empID;
+    private int empID;
     private int birthYear;
     private double monthlySalary;
     private double ocpRate;
@@ -15,7 +15,7 @@ public class Employee {
     private String empType;
     private Vehicle vehicle;
 
-    public String getEmpID() {
+    public int getEmpID() {
         return empID;
     }
 
@@ -27,7 +27,7 @@ public class Employee {
         this.vehicle = vehicle;
     }
 
-    public void setEmpID(String empID) {
+    public void setEmpID(int empID) {
         this.empID = empID;
     }
 
@@ -56,7 +56,7 @@ public class Employee {
         this.baseSalary = baseSalary;
     }
 
-    public Employee(String name, int birthYear, double monthlySalary, double ocpRate, String empID, String empType, Vehicle vehicle) {
+    public Employee(String name, int birthYear, double monthlySalary, double ocpRate, int empID, String empType, Vehicle vehicle) {
         this.name = name;
         this.empType = empType;
         this.empID=empID;

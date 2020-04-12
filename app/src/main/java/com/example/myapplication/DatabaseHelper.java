@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -62,7 +63,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public boolean addEmployee(int id, String name, int birthYear, double mSalary, double ocpRate,
-                               String empType, String numberCPB, String vehType, String vehModel,
+                               String empType, int numberCPB, String vehType, String vehModel,
                                String plate, String color, String carType, String sideCar) {
 
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
@@ -82,12 +83,47 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_CAR_TYPE, carType);
         cv.put(COLUMN_SIDE_CAR, sideCar);
 
-// the insert method returns row number if the insertion is successful and -1 if unsuccessful
+        // the insert method returns row number if the insertion is successful and -1 if unsuccessful
         return sqLiteDatabase.insert(TABLE_NAME, null, cv) != -1;
 
     }
 
-    
+    public Cursor getAllEmployees() {
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        return sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+    }
+
+
+    public boolean updateEmployee(int id, String name, int birthYear, double mSalary, double ocpRate,
+                                  String empType, String numberCPB, String vehType, String vehModel,
+                                  String plate, String color, String carType, String sideCar) {
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(COLUMN_NAME, name);
+        cv.put(COLUMN_BIRTHYEAR, birthYear);
+        cv.put(COLUMN_MONTHLY_SALARY, mSalary);
+        cv.put(COLUMN_OCP_RATE, ocpRate);
+        cv.put(COLUMN_EMP_TYPE, empType);
+        cv.put(COLUMN_NUMBER, numberCPB);
+        cv.put(COLUMN_VEHICLE_TYPE, vehType);
+        cv.put(COLUMN_VEHICLE_MODEL, vehModel);
+        cv.put(COLUMN_VEHICLE_PLATE, plate);
+        cv.put(COLUMN_VEHICLE_COLOR, color);
+        cv.put(COLUMN_CAR_TYPE, carType);
+        cv.put(COLUMN_SIDE_CAR, sideCar);
+
+        // this method returns the number of rows affected
+        return sqLiteDatabase.update(TABLE_NAME, cv, COLUMN_ID + "=?", new String[]{String.valueOf(id)}) > 0;
+
+
+    }
+
+    public boolean deleteEmployee(int id) {
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        // the delete method returns the number of rows affected
+        return sqLiteDatabase.delete(TABLE_NAME, COLUMN_ID + "=?", new String[]{String.valueOf(id)}) > 0;
+    }
 
 
 }

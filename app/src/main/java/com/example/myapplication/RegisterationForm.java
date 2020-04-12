@@ -18,16 +18,16 @@ public class RegisterationForm extends AppCompatActivity {
 
     Spinner emptype, vehColor;
     TextView clientsTV, bugsTV, projectsTV, carTypeTV, sideCarTV;
-    EditText clientsET, bugsET, projectsET, carTypeET, firstNameET, lastNameET, birthYearET, monthlySalaryET, ocpRateET,empIdET,vehModelET, plateNumET;
+    EditText clientsET, bugsET, projectsET, carTypeET, firstNameET, lastNameET, birthYearET, monthlySalaryET, ocpRateET, empIdET, vehModelET, plateNumET;
     RadioGroup vehType, sideCar;
     Button submit;
 
-    String fName, lName , empID, emploType, vehicleType, sideCarVal, carType, vehicleModel, plateNumber, vehicleColor;
-    int birthYear, numProj, numClients, numBugs;
+    String fName, lName, emploType, vehicleType, sideCarVal, carType, vehicleModel, plateNumber, vehicleColor;
+    int birthYear,  empID, numProj, numClients, numBugs, numPCB;
     double monthlySalary, ocpRate;
     Vehicle vehicle;
     Employee employee;
-
+    DatabaseHelper objhelper;
 
 
     @Override
@@ -48,27 +48,16 @@ public class RegisterationForm extends AppCompatActivity {
         sideCarTV = findViewById(R.id.Sidebare);
         sideCar.setVisibility(View.GONE);
         sideCarTV.setVisibility(View.GONE);
-        submit=findViewById(R.id.registerbutton);
-        firstNameET=findViewById(R.id.FirstNamee);
-        lastNameET=findViewById(R.id.LastNamee);
-        birthYearET=findViewById(R.id.BirthYeare);
-        monthlySalaryET=findViewById(R.id.MonthlySalarye);
-        ocpRateET=findViewById(R.id.Occupationratee);
-        empIdET=findViewById(R.id.EmployeeIde);
-        vehModelET=findViewById(R.id.editText7);
-        plateNumET=findViewById(R.id.editText8);
-        vehColor=findViewById(R.id.spinner2);
-
-
-
-
-
-
-
-
-
-
-
+        submit = findViewById(R.id.registerbutton);
+        firstNameET = findViewById(R.id.FirstNamee);
+        lastNameET = findViewById(R.id.LastNamee);
+        birthYearET = findViewById(R.id.BirthYeare);
+        monthlySalaryET = findViewById(R.id.MonthlySalarye);
+        ocpRateET = findViewById(R.id.Occupationratee);
+        empIdET = findViewById(R.id.EmployeeIde);
+        vehModelET = findViewById(R.id.editText7);
+        plateNumET = findViewById(R.id.editText8);
+        vehColor = findViewById(R.id.spinner2);
 
 
         emptype.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -144,76 +133,70 @@ public class RegisterationForm extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fName= firstNameET.getText().toString();
-                lName=lastNameET.getText().toString();
-                String fullName= fName+" "+lName;
-                birthYear=Integer.parseInt(birthYearET.getText().toString());
-                monthlySalary=Double.parseDouble(monthlySalaryET.getText().toString());
-                ocpRate= Double.parseDouble(ocpRateET.getText().toString());
-                empID=empIdET.getText().toString();
-                emploType=emptype.getSelectedItem().toString();
-                numProj=Integer.parseInt(projectsET.getText().toString());
-                numBugs= Integer.parseInt(bugsET.getText().toString());
-                numClients=Integer.parseInt(clientsET.getText().toString());
-                carType=carTypeET.getText().toString();
-                vehicleModel=vehModelET.getText().toString();
-                plateNumber=plateNumET.getText().toString();
-                vehicleColor=vehColor.getSelectedItem().toString();
+                fName = firstNameET.getText().toString();
+                lName = lastNameET.getText().toString();
+                String fullName = fName + " " + lName;
+                birthYear = Integer.parseInt(birthYearET.getText().toString());
+                monthlySalary = Double.parseDouble(monthlySalaryET.getText().toString());
+                ocpRate = Double.parseDouble(ocpRateET.getText().toString());
+                empID = Integer.parseInt(empIdET.getText().toString());
+                emploType = emptype.getSelectedItem().toString();
+                numProj = Integer.parseInt(projectsET.getText().toString());
+                numBugs = Integer.parseInt(bugsET.getText().toString());
+                numClients = Integer.parseInt(clientsET.getText().toString());
+                carType = carTypeET.getText().toString();
+                vehicleModel = vehModelET.getText().toString();
+                plateNumber = plateNumET.getText().toString();
+                vehicleColor = vehColor.getSelectedItem().toString();
 
-                int id= vehType.getCheckedRadioButtonId();
-                RadioButton r=vehType.findViewById(id);
-                vehicleType= r.getText().toString();
+                int id = vehType.getCheckedRadioButtonId();
+                RadioButton r = vehType.findViewById(id);
+                vehicleType = r.getText().toString();
 
-                int idd= sideCar.getCheckedRadioButtonId();
-                RadioButton ss=sideCar.findViewById(idd);
-                sideCarVal=ss.getText().toString();
+                int idd = sideCar.getCheckedRadioButtonId();
+                RadioButton ss = sideCar.findViewById(idd);
+                sideCarVal = ss.getText().toString();
 
 
+                if (vehicleType.equalsIgnoreCase("Car")) {
+                    sideCarVal = null;
+                    //  vehicle= new Car(vehicleModel,plateNumber,vehicleColor,vehicleType,carType);
 
-                if(vehicleType.equalsIgnoreCase("Car"))
-                {
-                    vehicle= new Car(vehicleModel,plateNumber,vehicleColor,vehicleType,carType);
 
+                } else if (vehicleType.equalsIgnoreCase("Motor Bike")) {
+                    carType = null;
+
+                    //  vehicle= new Motorcycle(vehicleModel,plateNumber,vehicleColor,vehicleType,sideCarVal);
                 }
-                else if(vehicleType.equalsIgnoreCase("Motor Bike")){
-                    vehicle= new Motorcycle(vehicleModel,plateNumber,vehicleColor,vehicleType,sideCarVal);
-                }
 
 
+                if (emploType.equalsIgnoreCase("Manager")) {
+
+                    // employee= new Manager(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numClients);
+                    numPCB = numClients;
 
 
+                } else if (emploType.equalsIgnoreCase("Tester")) {
+                    //  employee = new Tester(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numBugs);
+                    numPCB = numBugs;
 
 
-
-                if(emploType.equalsIgnoreCase("Manager"))
-                {
-
-                  employee= new Manager(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numClients);
-
-
-                }
-               else if(emploType.equalsIgnoreCase("Tester"))
-                {
-                    employee = new Tester(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numBugs);
-
-
-                }
-               else if(emploType.equalsIgnoreCase("Programmer"))
-                {
-                    employee = new Programmer(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numProj);
+                } else if (emploType.equalsIgnoreCase("Programmer")) {
+                    //  employee = new Programmer(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numProj);
+                    numPCB = numProj;
 
 
                 }
 
-                SingletonClass singlobj= SingletonClass.getInstance();
-                singlobj.emplist.add(employee);
+                objhelper.addEmployee(empID, fullName, birthYear, monthlySalary, ocpRate, emploType, numPCB, vehicleType, vehicleModel, plateNumber, vehicleColor, carType, sideCarVal);
 
 
+               // SingletonClass singlobj = SingletonClass.getInstance();
+                //singlobj.emplist.add(employee);
 
 
                 finish();
                 startActivity(getIntent());
-
 
 
             }
