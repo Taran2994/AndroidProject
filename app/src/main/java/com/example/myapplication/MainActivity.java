@@ -30,9 +30,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        Cursor cursor;
+
+        emlist= new ArrayList<Employee>();
+
+        mDatabase= new DatabaseHelper(this);
+
+         cursor = mDatabase.getAllEmployees();
 
 
-        Cursor cursor = mDatabase.getAllEmployees();
+
 
         if (cursor.moveToFirst()) {
             do {
@@ -110,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
 
             } while (cursor.moveToNext());
             cursor.close();
+
 
 
             EmployeeAdapter empAdapter = new EmployeeAdapter(this, R.layout.emp_adapter_layout, emlist);

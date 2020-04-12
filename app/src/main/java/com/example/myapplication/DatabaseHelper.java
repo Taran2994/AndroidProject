@@ -27,7 +27,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_SIDE_CAR = "side_car";
 
 
-    public DatabaseHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+    public DatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
 
@@ -90,7 +90,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor getAllEmployees() {
         SQLiteDatabase sqLiteDatabase = getReadableDatabase();
-        return sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        Cursor a;
+
+
+
+           a = sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+
+
+        //   Cursor a= sqLiteDatabase.query(TABLE_NAME, null, null, null, null, null, null, null);
+        return a;
+
+
     }
 
 

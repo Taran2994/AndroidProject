@@ -58,6 +58,7 @@ public class RegisterationForm extends AppCompatActivity {
         vehModelET = findViewById(R.id.editText7);
         plateNumET = findViewById(R.id.editText8);
         vehColor = findViewById(R.id.spinner2);
+        objhelper= new DatabaseHelper(this);
 
 
         emptype.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

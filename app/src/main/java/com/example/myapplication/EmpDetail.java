@@ -27,7 +27,7 @@ public class EmpDetail extends AppCompatActivity {
         Vehicle veh1 = emp1.getVehicle();
 
         String name = emp1.getName();
-        String id = emp1.getEmpID();
+        int id = emp1.getEmpID();
         int age = emp1.getAge();
         emptype = emp1.getEmpType();
         vehtype = veh1.getCategory();

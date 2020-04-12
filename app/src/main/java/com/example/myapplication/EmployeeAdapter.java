@@ -36,7 +36,7 @@ public class EmployeeAdapter extends ArrayAdapter {
         TextView idVal = v.findViewById(R.id.idValue);
 
         nameVal.setText(list.get(position).getName());
-        idVal.setText(list.get(position).getEmpID());
+        idVal.setText(Integer.toString(list.get(position).getEmpID()));
 
         return v;
 
