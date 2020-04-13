@@ -86,8 +86,8 @@ public class EmpDetail extends AppCompatActivity {
         DatabaseHelper db= new DatabaseHelper(this);
         db.deleteEmployee(empId);
         finish();
-       // Intent intent= new Intent(this, MainActivity.class);
-      //  startActivity(intent);
+        Intent intent= new Intent(this, MainActivity.class);
+      startActivity(intent);
 
 
     }
@@ -95,7 +95,7 @@ public class EmpDetail extends AppCompatActivity {
     public void onEditClick(View v) {
         EditDetails editDetails = new EditDetails();
         Bundle bundle = new Bundle();
-      //  bundle.putInt("Position", position);
+        bundle.putInt("EmpId", empId);
         bundle.putString("EmpType",emptype);
         bundle.putString("VehType",vehtype);
         editDetails.setArguments(bundle);
