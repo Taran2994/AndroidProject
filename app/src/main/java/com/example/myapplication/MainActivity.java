@@ -30,14 +30,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Cursor cursor;
+        ;
 
-        emlist= new ArrayList<Employee>();
+        emlist = new ArrayList<Employee>();
 
-        mDatabase= new DatabaseHelper(this);
+        mDatabase = new DatabaseHelper(this);
 
-         cursor = mDatabase.getAllEmployees();
-
+        Cursor cursor = mDatabase.getAllEmployees();
 
 
 
@@ -119,7 +118,6 @@ public class MainActivity extends AppCompatActivity {
             cursor.close();
 
 
-
             EmployeeAdapter empAdapter = new EmployeeAdapter(this, R.layout.emp_adapter_layout, emlist);
             listView.setAdapter(empAdapter);
 
@@ -128,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                     Intent intent = new Intent(MainActivity.this, EmpDetail.class);
-                    intent.putExtra("empPosition", position);
+                    intent.putExtra("empID", emlist.get(position).getEmpID());
                     startActivity(intent);
 
 
@@ -137,14 +135,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        }
+    }
 
-        public void openn (View view){
+    public void openn(View view) {
 
-            Intent intent = new Intent(this, RegisterationForm.class);
-            startActivity(intent);
-
-        }
-
+        Intent intent = new Intent(this, RegisterationForm.class);
+        startActivity(intent);
 
     }
+
+
+}

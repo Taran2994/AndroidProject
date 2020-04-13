@@ -90,15 +90,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor getAllEmployees() {
         SQLiteDatabase sqLiteDatabase = getReadableDatabase();
-        Cursor a;
 
 
-
-           a = sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME, null);
-
-
-        //   Cursor a= sqLiteDatabase.query(TABLE_NAME, null, null, null, null, null, null, null);
-        return a;
+        return sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME, null);
 
 
     }
@@ -135,5 +129,98 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return sqLiteDatabase.delete(TABLE_NAME, COLUMN_ID + "=?", new String[]{String.valueOf(id)}) > 0;
     }
 
+    public Employee getEmployee(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
 
+
+        Cursor cursor = db.query(TABLE_NAME, // a. table
+                null, // b. column names
+                " emp_id = ?", // c. selections
+                new String[]{String.valueOf(id)}, // d. selections args
+                null, // e. group by
+                null, // f. having
+                null, // g. order by
+                null); // h. limit
+
+        if (cursor != null)
+            cursor.moveToFirst();
+
+        Vehicle vehicle;
+        Employee e;
+        if (cursor.getString(7).equalsIgnoreCase("car")) {
+            vehicle = new Car(cursor.getString(8),
+                    cursor.getString(9),
+                    cursor.getString(10),
+                    cursor.getString(7),
+                    cursor.getString(11)
+            );
+
+        } else {
+
+            vehicle = new Motorcycle(cursor.getString(8),
+                    cursor.getString(9),
+                    cursor.getString(10),
+                    cursor.getString(7),
+                    cursor.getString(12)
+            );
+
+
+        }
+
+        if (cursor.getString(5).equalsIgnoreCase("Manager")) {
+            e = new Manager(cursor.getString(1),
+                    cursor.getInt(2),
+                    cursor.getDouble(3),
+
+                    cursor.getDouble(4),
+
+                    cursor.getInt(0),
+
+                    cursor.getString(5),
+                    vehicle,
+                    cursor.getInt(6)
+
+
+            );
+
+        } else if (cursor.getString(5).equalsIgnoreCase("Tester")) {
+            e = new Tester(cursor.getString(1),
+                    cursor.getInt(2),
+                    cursor.getDouble(3),
+
+                    cursor.getDouble(4),
+
+                    cursor.getInt(0),
+
+                    cursor.getString(5),
+                    vehicle,
+                    cursor.getInt(6)
+
+
+            );
+
+        } else if (cursor.getString(5).equalsIgnoreCase("Programmer")) {
+            e = new Programmer(cursor.getString(1),
+                    cursor.getInt(2),
+                    cursor.getDouble(3),
+
+                    cursor.getDouble(4),
+
+                    cursor.getInt(0),
+
+                    cursor.getString(5),
+                    vehicle,
+                    cursor.getInt(6)
+
+
+            );
+
+        } else {
+            e = null;
+        }
+
+        return e;
+
+
+    }
 }

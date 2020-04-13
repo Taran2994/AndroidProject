@@ -11,19 +11,21 @@ public class EmpDetail extends AppCompatActivity {
 
     TextView content;
     Button delete;
-    int position;
+    int empId;
     String emptype;
     String vehtype;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        DatabaseHelper db= new DatabaseHelper(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emp_detail);
-        position = getIntent().getIntExtra("empPosition", -1);
+        empId = getIntent().getIntExtra("empID", -1);
         content = findViewById(R.id.contentTV);
 
-        SingletonClass obj = SingletonClass.getInstance();
-        Employee emp1 = obj.emplist.get(position);
+      //  SingletonClass obj = SingletonClass.getInstance();
+        Employee emp1 = db.getEmployee(empId);
         Vehicle veh1 = emp1.getVehicle();
 
         String name = emp1.getName();
@@ -82,13 +84,13 @@ public class EmpDetail extends AppCompatActivity {
     public void onDelClick(View v) {
         finish();
         SingletonClass obj1 = SingletonClass.getInstance();
-        obj1.emplist.remove(position);
+      //  obj1.emplist.remove(position);
     }
 
     public void onEditClick(View v) {
         EditDetails editDetails = new EditDetails();
         Bundle bundle = new Bundle();
-        bundle.putInt("Position", position);
+      //  bundle.putInt("Position", position);
         bundle.putString("EmpType",emptype);
         bundle.putString("VehType",vehtype);
         editDetails.setArguments(bundle);

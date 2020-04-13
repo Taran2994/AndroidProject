@@ -23,7 +23,7 @@ public class RegisterationForm extends AppCompatActivity {
     Button submit;
 
     String fName, lName, emploType, vehicleType, sideCarVal, carType, vehicleModel, plateNumber, vehicleColor;
-    int birthYear,  empID, numProj, numClients, numBugs, numPCB;
+    int birthYear, empID, numProj, numClients, numBugs, numPCB;
     double monthlySalary, ocpRate;
     Vehicle vehicle;
     Employee employee;
@@ -58,7 +58,7 @@ public class RegisterationForm extends AppCompatActivity {
         vehModelET = findViewById(R.id.editText7);
         plateNumET = findViewById(R.id.editText8);
         vehColor = findViewById(R.id.spinner2);
-        objhelper= new DatabaseHelper(this);
+        objhelper = new DatabaseHelper(this);
 
 
         emptype.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -192,7 +192,7 @@ public class RegisterationForm extends AppCompatActivity {
                 objhelper.addEmployee(empID, fullName, birthYear, monthlySalary, ocpRate, emploType, numPCB, vehicleType, vehicleModel, plateNumber, vehicleColor, carType, sideCarVal);
 
 
-               // SingletonClass singlobj = SingletonClass.getInstance();
+                // SingletonClass singlobj = SingletonClass.getInstance();
                 //singlobj.emplist.add(employee);
 
 
