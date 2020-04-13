@@ -126,7 +126,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean deleteEmployee(int id) {
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
         // the delete method returns the number of rows affected
-        return sqLiteDatabase.delete(TABLE_NAME, COLUMN_ID + "=?", new String[]{String.valueOf(id)}) > 0;
+        boolean bb= sqLiteDatabase.delete(TABLE_NAME, COLUMN_ID + "=?", new String[]{String.valueOf(id)}) > 0;
+        sqLiteDatabase.close();
+        return bb;
     }
 
     public Employee getEmployee(int id) {
