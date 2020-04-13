@@ -99,7 +99,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     public boolean updateEmployee(int id, String name, int birthYear, double mSalary, double ocpRate,
-                                  String empType, String numberCPB, String vehType, String vehModel,
+                                  String empType, int numberCPB, String vehType, String vehModel,
                                   String plate, String color, String carType, String sideCar) {
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
         ContentValues cv = new ContentValues();

@@ -133,10 +133,11 @@
             android:id="@+id/numBugsTV"></TextView>
 
         <EditText
+            android:id="@+id/numBugsET"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/numBugsET"></EditText>
+            android:text="0"></EditText>
 
 
     </LinearLayout>
@@ -152,10 +153,11 @@
             android:id="@+id/numClientsTV"></TextView>
 
         <EditText
+            android:id="@+id/numClientsET"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/numClientsET"></EditText>
+            android:text="0"></EditText>
 
 
     </LinearLayout>
@@ -171,10 +173,11 @@
             android:id="@+id/numProjectsTV"></TextView>
 
         <EditText
+            android:id="@+id/numProjectsET"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/numProjectsET"></EditText>
+            android:text="0"></EditText>
 
 
     </LinearLayout>

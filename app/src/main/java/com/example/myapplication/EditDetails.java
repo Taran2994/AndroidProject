@@ -14,8 +14,8 @@ import android.widget.TextView;
 
 public class EditDetails extends AppCompatDialogFragment {
 
-    int empID;
-    String etype, vehType;
+    int empID, numPCB, numClients, numBugs, numProj;
+    String etype, vehType, sideCarVal, carType;
     TextView clientsTV, bugsTV, projectsTV, empTypeTV, empNameTV, empIDTV;
     EditText clientsET, bugsET, projectsET, ocpRateET, monthlySalET, birthYearET;
 
@@ -25,7 +25,7 @@ public class EditDetails extends AppCompatDialogFragment {
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.activity_edit_details, null);
 
-        DatabaseHelper objHelper = new DatabaseHelper(getContext());
+        final DatabaseHelper objHelper = new DatabaseHelper(getContext());
 
 
         Bundle bundle = getArguments();
@@ -35,7 +35,7 @@ public class EditDetails extends AppCompatDialogFragment {
         builder.setView(view);
         builder.setTitle("Edit Details");
 
-        Employee employee = objHelper.getEmployee(empID);
+        final Employee employee = objHelper.getEmployee(empID);
 
 
         clientsET = view.findViewById(R.id.numClientsET);
@@ -98,9 +98,59 @@ public class EditDetails extends AppCompatDialogFragment {
         ocpRateET.setText("" + employee.getOcpRate());
 
 
+
+
         builder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+
+                numBugs= Integer.parseInt(bugsET.getText().toString());
+
+                numClients= Integer.parseInt(clientsET.getText().toString());
+
+                numProj= Integer.parseInt(projectsET.getText().toString());
+
+                if (vehType.equalsIgnoreCase("Car")) {
+                    sideCarVal = null;
+                    Car car= (Car) employee.getVehicle();
+                    carType= car.getType();
+                    //  vehicle= new Car(vehicleModel,plateNumber,vehicleColor,vehicleType,carType);
+
+
+                } else if (vehType.equalsIgnoreCase("Motor Bike")) {
+                    carType = null;
+                    Motorcycle motorcycle = (Motorcycle) employee.getVehicle();
+                    sideCarVal= motorcycle.getSidecar();
+
+                    //  vehicle= new Motorcycle(vehicleModel,plateNumber,vehicleColor,vehicleType,sideCarVal);
+                }
+
+
+                if (etype.equalsIgnoreCase("Manager")) {
+
+                    // employee= new Manager(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numClients);
+                    numPCB = numClients;
+
+
+                } else if (etype.equalsIgnoreCase("Tester")) {
+                    //  employee = new Tester(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numBugs);
+                    numPCB = numBugs;
+
+
+                } else if (etype.equalsIgnoreCase("Programmer")) {
+                    //  employee = new Programmer(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numProj);
+                    numPCB = numProj;
+
+
+                }
+
+                Vehicle vehicle= employee.getVehicle();
+                objHelper.updateEmployee(empID,employee.getName(),Integer.parseInt(birthYearET.getText().toString()),Double.parseDouble(monthlySalET.getText().toString()),
+                        Double.parseDouble(ocpRateET.getText().toString()),etype,numPCB,vehType, vehicle.getModel(),vehicle.getPlateNum(),vehicle.getColor(),carType,sideCarVal );
+
+
+
+
 
 
             }
