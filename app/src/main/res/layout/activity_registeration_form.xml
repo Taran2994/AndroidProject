@@ -214,6 +214,80 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:id="@+id/projectst"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="Number of Projects"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/projectse"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:inputType="number"
+                    android:text="0"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/clientst"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="Number of Clients"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/clientse"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:inputType="number"
+                    android:text="0"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/bugst"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="Number of Bugs"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/bugse"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:inputType="number"
+                    android:text="0"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
                     android:id="@+id/Vehiclet"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -251,6 +325,72 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="Car Type"
+                    tools:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/editText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:hint="(Sport, SUV ..)"
+                    android:inputType="text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/Sidebare"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:gravity="left|center_vertical"
+                    android:text="Side Car"
+                    android:visibility="visible" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/yese"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Yes"
+                        android:visibility="visible" />
+
+                    <RadioButton
+                        android:id="@+id/Nor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:text="No"
+                        android:visibility="visible" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
                 <TextView
                     android:id="@+id/VehicleModelt"
                     android:layout_width="0dp"
@@ -262,232 +402,67 @@
                 <EditText
                     android:id="@+id/editText7"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:gravity="left|center_vertical"
                     android:hint="Honda"
-                    android:inputType="text"
-                    />
+                    android:inputType="text" />
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/PlateNumbert"
-                android:layout_width="204dp"
-                android:layout_height="42dp"
-                android:layout_marginTop="13dp"
-                android:gravity="left|center_vertical"
-                android:text="Plate Number"
-                app:layout_constraintEnd_toStartOf="@+id/editText8"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/VehicleModelt" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/VehicleColort"
-                android:layout_width="204dp"
-                android:layout_height="39dp"
-                android:layout_marginTop="20dp"
-                android:gravity="left|center_vertical"
-                android:text="Vehicle Color"
-                app:layout_constraintEnd_toStartOf="@+id/spinner2"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/PlateNumbert" />
+                <TextView
+                    android:id="@+id/PlateNumbert"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:gravity="left|center_vertical"
+                    android:text="Plate Number" />
+
+                <EditText
+                    android:id="@+id/editText8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:hint="RXC191"
+                    android:inputType="text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/VehicleColort"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="Vehicle Color" />
+
+                <Spinner
+                    android:id="@+id/spinner2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/color"
+                    android:gravity="center" />
+            </LinearLayout>
 
 
             <Button
                 android:id="@+id/registerbutton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="44dp"
-                android:layout_marginBottom="1dp"
+
+                android:layout_marginBottom="10dp"
                 android:gravity="center"
-                android:text="Register"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/VehicleColort" />
+                android:text="Register" />
 
-            <Spinner
-                android:id="@+id/spinner2"
-                android:layout_width="204dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="20dp"
-                android:entries="@array/color"
-                android:gravity="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/VehicleColort"
-                app:layout_constraintTop_toBottomOf="@+id/editText8" />
-
-            <EditText
-                android:id="@+id/editText8"
-                android:layout_width="204dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:ems="10"
-                android:gravity="left|center_vertical"
-                android:hint="RXC191"
-                android:inputType="text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/PlateNumbert"
-                app:layout_constraintTop_toBottomOf="@+id/editText7" />
-
-            <TextView
-                android:id="@+id/Sidebare"
-                android:layout_width="173dp"
-                android:layout_height="37dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="36dp"
-                android:gravity="left|center_vertical"
-                android:text="Side Car"
-                android:visibility="visible"
-                app:layout_constraintEnd_toStartOf="@+id/radioGroup"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Vehiclet" />
-
-            <TextView
-                android:id="@+id/projectst"
-                android:layout_width="204dp"
-                android:layout_height="49dp"
-                android:layout_marginTop="12dp"
-                android:gravity="left|center_vertical"
-                android:text="Number of Projects"
-                android:visibility="visible"
-                app:layout_constraintEnd_toStartOf="@+id/projectse"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/EmployeeTypet" />
-
-            <TextView
-                android:id="@+id/clientst"
-                android:layout_width="204dp"
-                android:layout_height="52dp"
-                android:layout_marginTop="12dp"
-                android:gravity="left|center_vertical"
-                android:text="Number of Clients"
-                android:visibility="visible"
-                app:layout_constraintEnd_toStartOf="@+id/clientse"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/projectst" />
-
-            <TextView
-                android:id="@+id/bugst"
-                android:layout_width="204dp"
-                android:layout_height="54dp"
-                android:layout_marginTop="12dp"
-                android:gravity="left|center_vertical"
-                android:text="Number of Bugs"
-                android:visibility="visible"
-                app:layout_constraintEnd_toStartOf="@+id/bugse"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/clientst" />
-
-            <EditText
-                android:id="@+id/projectse"
-                android:layout_width="204dp"
-                android:layout_height="52dp"
-                android:layout_marginTop="12dp"
-                android:ems="10"
-                android:gravity="left|center_vertical"
-                android:inputType="number"
-                android:text="0"
-                android:visibility="visible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/projectst"
-                app:layout_constraintTop_toBottomOf="@+id/spinner" />
-
-            <EditText
-                android:id="@+id/clientse"
-                android:layout_width="204dp"
-                android:layout_height="51dp"
-                android:layout_marginTop="12dp"
-                android:ems="10"
-                android:gravity="left|center_vertical"
-                android:inputType="number"
-                android:text="0"
-                android:visibility="visible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/clientst"
-                app:layout_constraintTop_toBottomOf="@+id/projectse" />
-
-            <EditText
-                android:id="@+id/bugse"
-                android:layout_width="204dp"
-                android:layout_height="55dp"
-                android:layout_marginTop="12dp"
-                android:ems="10"
-                android:gravity="left|center_vertical"
-                android:inputType="number"
-                android:text="0"
-                android:visibility="visible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/bugst"
-                app:layout_constraintTop_toBottomOf="@+id/clientse" />
-
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="204dp"
-                android:layout_height="54dp"
-                android:layout_marginTop="36dp"
-                android:gravity="left|center_vertical"
-                android:text="Car Type"
-                app:layout_constraintEnd_toStartOf="@+id/editText"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Sidebare"
-                tools:visibility="visible" />
-
-            <EditText
-                android:id="@+id/editText"
-                android:layout_width="204dp"
-                android:layout_height="61dp"
-                android:layout_marginTop="36dp"
-                android:ems="10"
-                android:gravity="left|center_vertical"
-                android:hint="(Sport, SUV ..)"
-                android:inputType="text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-            <RadioGroup
-                android:id="@+id/radioGroup"
-                android:layout_width="204dp"
-                android:layout_height="46dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="50dp"
-                android:layout_marginRight="50dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/Sidebare"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup2">
-
-                <RadioButton
-                    android:id="@+id/yese"
-                    android:layout_width="60dp"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="Yes"
-                    android:visibility="visible" />
-
-                <RadioButton
-                    android:id="@+id/Nor"
-                    android:layout_width="83dp"
-                    android:layout_height="32dp"
-                    android:layout_marginLeft="3dp"
-                    android:gravity="center"
-                    android:text="No"
-                    android:visibility="visible" />
-            </RadioGroup>
 
         </LinearLayout>
 
