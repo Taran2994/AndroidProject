@@ -12,6 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Calendar;
 
 public class EditDetails extends AppCompatDialogFragment {
 
@@ -110,12 +113,41 @@ public class EditDetails extends AppCompatDialogFragment {
                 numClients= Integer.parseInt(clientsET.getText().toString());
 
                 numProj= Integer.parseInt(projectsET.getText().toString());
+                if(birthYearET.getText().toString().equalsIgnoreCase(""))
+                {
+                    Toast.makeText(getContext(), "You did not enter the Birth Year", Toast.LENGTH_SHORT).show();
+                    birthYearET.requestFocus();
+                    return;
+
+                }
+                int brthYr= Integer.parseInt(birthYearET.getText().toString());
+                if ((brthYr <= 1900) || (brthYr >= Calendar.getInstance().get(Calendar.YEAR))) {
+                    Toast.makeText(getContext(), "Enter Birth Year between 1900 and Current Year", Toast.LENGTH_SHORT).show();
+                    birthYearET.requestFocus();
+                    return;
+
+
+                }
+                if(monthlySalET.getText().toString().equalsIgnoreCase(""))
+                {
+                    Toast.makeText(getContext(), "You did not enter the Monthly Salary", Toast.LENGTH_SHORT).show();
+                    monthlySalET.requestFocus();
+                    return;
+
+                }
+                if(ocpRateET.getText().toString().equalsIgnoreCase(""))
+                {
+                    Toast.makeText(getContext(), "You did not enter the Occupation Rate", Toast.LENGTH_SHORT).show();
+                    ocpRateET.requestFocus();
+                    return;
+
+                }
 
                 if (vehType.equalsIgnoreCase("Car")) {
                     sideCarVal = null;
                     Car car= (Car) employee.getVehicle();
                     carType= car.getType();
-                    //  vehicle= new Car(vehicleModel,plateNumber,vehicleColor,vehicleType,carType);
+
 
 
                 } else if (vehType.equalsIgnoreCase("Motor Bike")) {
@@ -123,27 +155,53 @@ public class EditDetails extends AppCompatDialogFragment {
                     Motorcycle motorcycle = (Motorcycle) employee.getVehicle();
                     sideCarVal= motorcycle.getSidecar();
 
-                    //  vehicle= new Motorcycle(vehicleModel,plateNumber,vehicleColor,vehicleType,sideCarVal);
+
                 }
 
 
                 if (etype.equalsIgnoreCase("Manager")) {
+                    if(clientsET.getText().toString().equalsIgnoreCase(""))
+                    {
+                        Toast.makeText(getContext(), "You did not enter the Number Of Clients", Toast.LENGTH_SHORT).show();
+                        clientsET.requestFocus();
+                        return;
 
-                    // employee= new Manager(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numClients);
+                    }
+
+
                     numPCB = numClients;
 
 
                 } else if (etype.equalsIgnoreCase("Tester")) {
-                    //  employee = new Tester(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numBugs);
+
+                    if(bugsET.getText().toString().equalsIgnoreCase(""))
+                    {
+                        Toast.makeText(getContext(), "You did not enter the Number Of Bugs", Toast.LENGTH_SHORT).show();
+                        bugsET.requestFocus();
+                        return;
+
+                    }
+
                     numPCB = numBugs;
 
 
                 } else if (etype.equalsIgnoreCase("Programmer")) {
-                    //  employee = new Programmer(fullName,birthYear,monthlySalary,ocpRate,empID,emploType,vehicle,numProj);
+
+                    if(projectsET.getText().toString().equalsIgnoreCase(""))
+                    {
+                        Toast.makeText(getContext(), "You did not enter the Number Of Projects", Toast.LENGTH_SHORT).show();
+                        projectsET.requestFocus();
+                        return;
+
+                    }
                     numPCB = numProj;
 
 
                 }
+
+
+
+
 
                 Vehicle vehicle= employee.getVehicle();
                 objHelper.updateEmployee(empID,employee.getName(),Integer.parseInt(birthYearET.getText().toString()),Double.parseDouble(monthlySalET.getText().toString()),

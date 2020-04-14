@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.sql.SQLOutput;
+import java.util.Calendar;
 
 public class RegisterationForm extends AppCompatActivity {
 
@@ -136,8 +137,7 @@ public class RegisterationForm extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 fName = firstNameET.getText().toString();
-                if(fName.equalsIgnoreCase(""))
-                {
+                if (fName.equalsIgnoreCase("")) {
                     Toast.makeText(RegisterationForm.this, "You did not enter the First Name", Toast.LENGTH_SHORT).show();
                     firstNameET.requestFocus();
                     return;
@@ -145,8 +145,7 @@ public class RegisterationForm extends AppCompatActivity {
                 }
 
                 lName = lastNameET.getText().toString();
-                if(lName.equalsIgnoreCase(""))
-                {
+                if (lName.equalsIgnoreCase("")) {
                     Toast.makeText(RegisterationForm.this, "You did not enter the Last Name", Toast.LENGTH_SHORT).show();
                     lastNameET.requestFocus();
                     return;
@@ -154,8 +153,7 @@ public class RegisterationForm extends AppCompatActivity {
                 }
                 String fullName = fName + " " + lName;
 
-                if(birthYearET.getText().toString().equalsIgnoreCase(""))
-                {
+                if (birthYearET.getText().toString().equalsIgnoreCase("")) {
                     Toast.makeText(RegisterationForm.this, "You did not enter the Birth Year", Toast.LENGTH_SHORT).show();
                     birthYearET.requestFocus();
                     return;
@@ -163,8 +161,16 @@ public class RegisterationForm extends AppCompatActivity {
                 }
                 birthYear = Integer.parseInt(birthYearET.getText().toString());
 
-                if(monthlySalaryET.getText().toString().equalsIgnoreCase(""))
-                {
+                if ((birthYear <= 1900) || (birthYear >= Calendar.getInstance().get(Calendar.YEAR))) {
+                    Toast.makeText(RegisterationForm.this, "Enter Birth Year between 1900 and Current Year", Toast.LENGTH_SHORT).show();
+                    birthYearET.requestFocus();
+                    return;
+
+
+                }
+
+
+                if (monthlySalaryET.getText().toString().equalsIgnoreCase("")) {
                     Toast.makeText(RegisterationForm.this, "You did not enter the Monthly Salary", Toast.LENGTH_SHORT).show();
                     monthlySalaryET.requestFocus();
                     return;
@@ -173,8 +179,7 @@ public class RegisterationForm extends AppCompatActivity {
 
                 monthlySalary = Double.parseDouble(monthlySalaryET.getText().toString());
 
-                if(ocpRateET.getText().toString().equalsIgnoreCase(""))
-                {
+                if (ocpRateET.getText().toString().equalsIgnoreCase("")) {
                     Toast.makeText(RegisterationForm.this, "You did not enter the Occupation Rate", Toast.LENGTH_SHORT).show();
                     ocpRateET.requestFocus();
                     return;
@@ -182,8 +187,7 @@ public class RegisterationForm extends AppCompatActivity {
                 }
                 ocpRate = Double.parseDouble(ocpRateET.getText().toString());
 
-                if(empIdET.getText().toString().equalsIgnoreCase(""))
-                {
+                if (empIdET.getText().toString().equalsIgnoreCase("")) {
                     Toast.makeText(RegisterationForm.this, "You did not enter the Employee ID", Toast.LENGTH_SHORT).show();
 
                     empIdET.requestFocus();
@@ -194,8 +198,7 @@ public class RegisterationForm extends AppCompatActivity {
 
                 emploType = emptype.getSelectedItem().toString();
 
-                if(emploType.equalsIgnoreCase("Choose a type"))
-                {
+                if (emploType.equalsIgnoreCase("Choose a type")) {
                     Toast.makeText(RegisterationForm.this, "You did not select the Employee Type", Toast.LENGTH_SHORT).show();
                     emptype.setFocusable(true);
                     emptype.setFocusableInTouchMode(true);
@@ -209,8 +212,7 @@ public class RegisterationForm extends AppCompatActivity {
                 carType = carTypeET.getText().toString();
                 vehicleModel = vehModelET.getText().toString();
 
-                if(vehicleModel.equalsIgnoreCase(""))
-                {
+                if (vehicleModel.equalsIgnoreCase("")) {
                     Toast.makeText(RegisterationForm.this, "You did not enter the Vehicle Model", Toast.LENGTH_SHORT).show();
 
                     vehModelET.requestFocus();
@@ -219,8 +221,7 @@ public class RegisterationForm extends AppCompatActivity {
                 }
 
                 plateNumber = plateNumET.getText().toString();
-                if(plateNumber.equalsIgnoreCase(""))
-                {
+                if (plateNumber.equalsIgnoreCase("")) {
                     Toast.makeText(RegisterationForm.this, "You did not enter the Plate Number", Toast.LENGTH_SHORT).show();
 
                     plateNumET.requestFocus();
@@ -229,8 +230,7 @@ public class RegisterationForm extends AppCompatActivity {
                 }
                 vehicleColor = vehColor.getSelectedItem().toString();
 
-                if(vehicleColor.equalsIgnoreCase("Choose a color"))
-                {
+                if (vehicleColor.equalsIgnoreCase("Choose a color")) {
                     Toast.makeText(RegisterationForm.this, "You did not select the Vehicle Color", Toast.LENGTH_SHORT).show();
                     vehColor.setFocusable(true);
                     vehColor.setFocusableInTouchMode(true);
@@ -249,18 +249,9 @@ public class RegisterationForm extends AppCompatActivity {
                 sideCarVal = ss.getText().toString();
 
 
-
-
-
-
-
-
-
-
                 if (vehicleType.equalsIgnoreCase("Car")) {
                     sideCarVal = null;
-                    if(carType.equalsIgnoreCase(""))
-                    {
+                    if (carType.equalsIgnoreCase("")) {
                         Toast.makeText(RegisterationForm.this, "You did not enter the Car Type", Toast.LENGTH_SHORT).show();
                         carTypeET.requestFocus();
 
