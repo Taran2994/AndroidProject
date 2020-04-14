@@ -6,6 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#2064EFA7"
     tools:context=".RegisterationForm">
 
     <ScrollView
@@ -18,15 +19,19 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
 
             <TextView
                 android:id="@+id/textRegistration"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
+                android:background="#E864EFA7"
                 android:foreground="#00DEFAF6"
                 android:gravity="center"
+                android:padding="10dp"
                 android:shadowColor="#00614141"
                 android:text="Registration Form"
                 android:textAlignment="center"
@@ -202,7 +207,7 @@
                 <Spinner
                     android:id="@+id/spinner"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45dp"
                     android:layout_weight="1"
 
                     android:entries="@array/emp_type"
@@ -291,17 +296,19 @@
                     android:id="@+id/Vehiclet"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
 
+                    android:layout_marginTop="13dp"
+                    android:layout_weight="1"
                     android:gravity="left|center_vertical"
                     android:text="Vehicle" />
 
                 <RadioGroup
                     android:id="@+id/radioGroup2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45dp"
                     android:layout_weight="1"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp">
 
                     <RadioButton
                         android:id="@+id/radioButton"
@@ -354,8 +361,9 @@
                     android:id="@+id/Sidebare"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_marginTop="13dp"
 
+                    android:layout_weight="1"
                     android:gravity="left|center_vertical"
                     android:text="Side Car"
                     android:visibility="visible" />
@@ -363,10 +371,11 @@
                 <RadioGroup
                     android:id="@+id/radioGroup"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45dp"
                     android:layout_weight="1"
 
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp">
 
                     <RadioButton
                         android:id="@+id/yese"
@@ -447,7 +456,7 @@
                 <Spinner
                     android:id="@+id/spinner2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45dp"
                     android:layout_weight="1"
                     android:entries="@array/color"
                     android:gravity="center" />
@@ -459,7 +468,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="15dp"
                 android:gravity="center"
                 android:text="Register" />
 
