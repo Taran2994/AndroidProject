@@ -209,6 +209,7 @@ public class EditDetails extends AppCompatDialogFragment {
 
 
 
+
                 Intent intent = new Intent(getContext(), EmpDetail.class);
                 intent.putExtra("empID", empID);
                 startActivity(intent);

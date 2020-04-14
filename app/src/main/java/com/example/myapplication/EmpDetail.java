@@ -94,12 +94,19 @@ public class EmpDetail extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        this.finish();
+    }
+
     public void onEditClick(View v) {
         EditDetails editDetails = new EditDetails();
         Bundle bundle = new Bundle();
         bundle.putInt("EmpId", empId);
         bundle.putString("EmpType",emptype);
         bundle.putString("VehType",vehtype);
+
         editDetails.setArguments(bundle);
         editDetails.show(getSupportFragmentManager(), "Edit Details");
 
