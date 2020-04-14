@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#3A60DDDD"
     android:orientation="vertical"
+    android:padding="15dp"
     tools:context=".EditDetails">
 
     <LinearLayout
@@ -14,14 +16,19 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
             android:layout_weight="1"
             android:text="Employee ID"></TextView>
 
         <TextView
+            android:id="@+id/empIDTV"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:layout_weight="1"
-            android:id="@+id/empIDTV"></TextView>
+            android:textColor="#0C0C0C"
+            android:textSize="18sp"></TextView>
 
 
     </LinearLayout>
@@ -33,14 +40,19 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
             android:layout_weight="1"
             android:text="Name"></TextView>
 
         <TextView
+            android:id="@+id/empNameTV"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:layout_weight="1"
-            android:id="@+id/empNameTV"></TextView>
+            android:textColor="#0C0B0B"
+            android:textSize="18sp"></TextView>
 
 
     </LinearLayout>
@@ -52,14 +64,19 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
             android:layout_weight="1"
             android:text="Employee Type"></TextView>
 
         <TextView
+            android:id="@+id/empTypeTV"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:layout_weight="1"
-            android:id="@+id/empTypeTV"></TextView>
+            android:textColor="#0B0A0A"
+            android:textSize="18sp"></TextView>
 
 
     </LinearLayout>
@@ -75,10 +92,10 @@
             android:text="Birth Year"></TextView>
 
         <EditText
+            android:id="@+id/birthYearET"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/birthYearET"></EditText>
+            android:layout_weight="1"></EditText>
 
 
     </LinearLayout>
@@ -94,10 +111,11 @@
             android:text="Monthly Salary"></TextView>
 
         <EditText
+            android:id="@+id/monthlySalET"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/monthlySalET"></EditText>
+            android:inputType="numberDecimal"></EditText>
 
 
     </LinearLayout>
@@ -113,10 +131,11 @@
             android:text="Occupation Rate"></TextView>
 
         <EditText
+            android:id="@+id/ocpRateET"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/ocpRateET"></EditText>
+            android:inputType="numberDecimal"></EditText>
 
 
     </LinearLayout>
@@ -126,57 +145,62 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/numBugsTV"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Number of Bugs"
-            android:id="@+id/numBugsTV"></TextView>
+            android:text="Number of Bugs"></TextView>
 
         <EditText
             android:id="@+id/numBugsET"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:inputType="number"
             android:text="0"></EditText>
 
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/numClientsTV"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Number of Clients"
-            android:id="@+id/numClientsTV"></TextView>
+            android:text="Number of Clients"></TextView>
 
         <EditText
             android:id="@+id/numClientsET"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:inputType="number"
             android:text="0"></EditText>
 
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/numProjectsTV"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Number of Projects"
-            android:id="@+id/numProjectsTV"></TextView>
+            android:text="Number of Projects"></TextView>
 
         <EditText
             android:id="@+id/numProjectsET"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:inputType="number"
             android:text="0"></EditText>
 
 

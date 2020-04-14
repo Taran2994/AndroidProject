@@ -23,7 +23,7 @@ public class Manager extends Employee {
     private double annualIncome() {
 
         double base = getBaseSalary();
-        double bonus = this.nbClients * gain_Factor_Client;
+        double bonus = (this.nbClients * gain_Factor_Client)+(this.nbClients * gain_Factor_Travel);
 
         double totalIncome = base + bonus;
         return totalIncome;
