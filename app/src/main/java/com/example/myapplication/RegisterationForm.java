@@ -196,6 +196,14 @@ public class RegisterationForm extends AppCompatActivity {
                 }
                 empID = Integer.parseInt(empIdET.getText().toString());
 
+                if (objhelper.checkId(empID)) {
+                    Toast.makeText(RegisterationForm.this, "Please enter a Unique Employee ID", Toast.LENGTH_SHORT).show();
+
+                    empIdET.requestFocus();
+                    return;
+
+                }
+
                 emploType = emptype.getSelectedItem().toString();
 
                 if (emploType.equalsIgnoreCase("Choose a type")) {

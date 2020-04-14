@@ -225,4 +225,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     }
+
+    public boolean checkId(int id)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        if (cursor.moveToFirst()) {
+            do {
+                int empid= cursor.getInt(0);
+                if(id==empid){
+                    return true;
+                }
+
+
+            }
+            while (cursor.moveToNext());
+        }
+            cursor.close();
+
+        return false;
+
+
+    }
 }
