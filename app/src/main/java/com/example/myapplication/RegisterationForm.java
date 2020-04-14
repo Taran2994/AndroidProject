@@ -11,6 +11,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.sql.SQLOutput;
 
@@ -135,20 +136,109 @@ public class RegisterationForm extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 fName = firstNameET.getText().toString();
+                if(fName.equalsIgnoreCase(""))
+                {
+                    Toast.makeText(RegisterationForm.this, "You did not enter the First Name", Toast.LENGTH_SHORT).show();
+                    firstNameET.requestFocus();
+                    return;
+
+                }
+
                 lName = lastNameET.getText().toString();
+                if(lName.equalsIgnoreCase(""))
+                {
+                    Toast.makeText(RegisterationForm.this, "You did not enter the Last Name", Toast.LENGTH_SHORT).show();
+                    lastNameET.requestFocus();
+                    return;
+
+                }
                 String fullName = fName + " " + lName;
+
+                if(birthYearET.getText().toString().equalsIgnoreCase(""))
+                {
+                    Toast.makeText(RegisterationForm.this, "You did not enter the Birth Year", Toast.LENGTH_SHORT).show();
+                    birthYearET.requestFocus();
+                    return;
+
+                }
                 birthYear = Integer.parseInt(birthYearET.getText().toString());
+
+                if(monthlySalaryET.getText().toString().equalsIgnoreCase(""))
+                {
+                    Toast.makeText(RegisterationForm.this, "You did not enter the Monthly Salary", Toast.LENGTH_SHORT).show();
+                    monthlySalaryET.requestFocus();
+                    return;
+
+                }
+
                 monthlySalary = Double.parseDouble(monthlySalaryET.getText().toString());
+
+                if(ocpRateET.getText().toString().equalsIgnoreCase(""))
+                {
+                    Toast.makeText(RegisterationForm.this, "You did not enter the Occupation Rate", Toast.LENGTH_SHORT).show();
+                    ocpRateET.requestFocus();
+                    return;
+
+                }
                 ocpRate = Double.parseDouble(ocpRateET.getText().toString());
+
+                if(empIdET.getText().toString().equalsIgnoreCase(""))
+                {
+                    Toast.makeText(RegisterationForm.this, "You did not enter the Employee ID", Toast.LENGTH_SHORT).show();
+
+                    empIdET.requestFocus();
+                    return;
+
+                }
                 empID = Integer.parseInt(empIdET.getText().toString());
+
                 emploType = emptype.getSelectedItem().toString();
+
+                if(emploType.equalsIgnoreCase("Choose a type"))
+                {
+                    Toast.makeText(RegisterationForm.this, "You did not select the Employee Type", Toast.LENGTH_SHORT).show();
+                    emptype.setFocusable(true);
+                    emptype.setFocusableInTouchMode(true);
+                    emptype.requestFocus();
+                    return;
+
+                }
                 numProj = Integer.parseInt(projectsET.getText().toString());
                 numBugs = Integer.parseInt(bugsET.getText().toString());
                 numClients = Integer.parseInt(clientsET.getText().toString());
                 carType = carTypeET.getText().toString();
                 vehicleModel = vehModelET.getText().toString();
+
+                if(vehicleModel.equalsIgnoreCase(""))
+                {
+                    Toast.makeText(RegisterationForm.this, "You did not enter the Vehicle Model", Toast.LENGTH_SHORT).show();
+
+                    vehModelET.requestFocus();
+                    return;
+
+                }
+
                 plateNumber = plateNumET.getText().toString();
+                if(plateNumber.equalsIgnoreCase(""))
+                {
+                    Toast.makeText(RegisterationForm.this, "You did not enter the Plate Number", Toast.LENGTH_SHORT).show();
+
+                    plateNumET.requestFocus();
+                    return;
+
+                }
                 vehicleColor = vehColor.getSelectedItem().toString();
+
+                if(vehicleColor.equalsIgnoreCase("Choose a color"))
+                {
+                    Toast.makeText(RegisterationForm.this, "You did not select the Vehicle Color", Toast.LENGTH_SHORT).show();
+                    vehColor.setFocusable(true);
+                    vehColor.setFocusableInTouchMode(true);
+                    vehColor.requestFocus();
+                    return;
+
+                }
+
 
                 int id = vehType.getCheckedRadioButtonId();
                 RadioButton r = vehType.findViewById(id);
@@ -159,9 +249,24 @@ public class RegisterationForm extends AppCompatActivity {
                 sideCarVal = ss.getText().toString();
 
 
+
+
+
+
+
+
+
+
                 if (vehicleType.equalsIgnoreCase("Car")) {
                     sideCarVal = null;
-                    //  vehicle= new Car(vehicleModel,plateNumber,vehicleColor,vehicleType,carType);
+                    if(carType.equalsIgnoreCase(""))
+                    {
+                        Toast.makeText(RegisterationForm.this, "You did not enter the Car Type", Toast.LENGTH_SHORT).show();
+                        carTypeET.requestFocus();
+
+                        return;
+
+                    }
 
 
                 } else if (vehicleType.equalsIgnoreCase("Motor Bike")) {

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Employee Record</string>
     <string-array name="emp_type">
         <item>Choose a type</item>
         <item>Manager</item>
@@ -7,7 +7,7 @@
         <item>Programmer</item>
     </string-array>
     <string-array name="color">
-        <item>choose a color</item>
+        <item>Choose a color</item>
         <item>White</item>
         <item>Yellow</item>
         <item>Blue</item>
