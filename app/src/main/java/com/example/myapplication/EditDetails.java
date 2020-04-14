@@ -212,6 +212,7 @@ public class EditDetails extends AppCompatDialogFragment {
                 Intent intent = new Intent(getContext(), EmpDetail.class);
                 intent.putExtra("empID", empID);
                 startActivity(intent);
+                Toast.makeText(getContext(), "Update Successful", Toast.LENGTH_SHORT).show();
 
             }
         })

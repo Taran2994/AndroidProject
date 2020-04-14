@@ -5,15 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    SwipeDetector swipeDetector;
     ListView listView;
     ArrayList<Employee> emlist;
     DatabaseHelper mDatabase;
@@ -37,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         mDatabase = new DatabaseHelper(this);
 
         Cursor cursor = mDatabase.getAllEmployees();
-
 
 
         if (cursor.moveToFirst()) {
@@ -121,28 +122,49 @@ public class MainActivity extends AppCompatActivity {
             EmployeeAdapter empAdapter = new EmployeeAdapter(this, R.layout.emp_adapter_layout, emlist);
             listView.setAdapter(empAdapter);
 
+             swipeDetector = new SwipeDetector();
+
+            listView.setOnTouchListener(swipeDetector);
+
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    if (swipeDetector.swipeDetected()) {
+                        if ((swipeDetector.getAction() == SwipeDetector.Action.RL) || (swipeDetector.getAction() == SwipeDetector.Action.LR)) {
 
-                    Intent intent = new Intent(MainActivity.this, EmpDetail.class);
-                    intent.putExtra("empID", emlist.get(position).getEmpID());
-                    startActivity(intent);
+                            mDatabase.deleteEmployee(emlist.get(position).getEmpID());
+                            recreate();
+                            Toast.makeText(getApplicationContext(), "Employee Deleted", Toast.LENGTH_SHORT).show();
 
 
-                }
-            });
+
+                        }
+
+                        }
+                    else {
+                        Intent intent = new Intent(MainActivity.this, EmpDetail.class);
+                        intent.putExtra("empID", emlist.get(position).getEmpID());
+                        startActivity(intent);
+                    }
+
+
+
+
+                    }
+                });
+
+
+            }
+
+
+        }
+
+        public void openn (View view){
+
+            Intent intent = new Intent(this, RegisterationForm.class);
+            startActivity(intent);
+
         }
 
 
     }
-
-    public void openn(View view) {
-
-        Intent intent = new Intent(this, RegisterationForm.class);
-        startActivity(intent);
-
-    }
-
-
-}

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class EmpDetail extends AppCompatActivity {
 
@@ -88,6 +89,7 @@ public class EmpDetail extends AppCompatActivity {
         finish();
         Intent intent= new Intent(this, MainActivity.class);
       startActivity(intent);
+        Toast.makeText(this, "Employee Deleted", Toast.LENGTH_SHORT).show();
 
 
     }
