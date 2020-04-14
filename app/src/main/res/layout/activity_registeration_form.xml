@@ -15,19 +15,16 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textRegistration"
-                android:layout_width="290dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="70dp"
-                android:layout_marginLeft="70dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginEnd="51dp"
-                android:layout_marginRight="51dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
                 android:foreground="#00DEFAF6"
                 android:gravity="center"
                 android:shadowColor="#00614141"
@@ -37,118 +34,241 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textColor="#A6080909"
                 android:textFontWeight="@android:integer/config_longAnimTime"
-                app:fontFamily="monospace"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:fontFamily="monospace" />
 
-            <TextView
-                android:id="@+id/FirstName"
-                android:layout_width="204dp"
-                android:layout_height="48dp"
-                android:layout_marginTop="4dp"
-                android:gravity="left|center_vertical"
-                android:text="Employee First Name"
-                app:layout_constraintEnd_toStartOf="@+id/FirstNamee"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textRegistration" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/LastNamet"
-                android:layout_width="204dp"
-                android:layout_height="47dp"
-                android:layout_marginTop="16dp"
-                android:gravity="left|center_vertical"
-                android:text="Employee Last Name"
-                app:layout_constraintEnd_toStartOf="@+id/LastNamee"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/FirstName" />
+                <TextView
+                    android:id="@+id/FirstName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
 
-            <TextView
-                android:id="@+id/BirthYeart"
-                android:layout_width="204dp"
-                android:layout_height="42dp"
-                android:layout_marginTop="16dp"
-                android:gravity="left|center_vertical"
-                android:text="Employee Birth Year"
-                app:layout_constraintEnd_toStartOf="@+id/BirthYeare"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/LastNamet" />
+                    android:gravity="left|center_vertical"
+                    android:text="Employee First Name"></TextView>
 
-            <TextView
-                android:id="@+id/MonthlySalaryt"
-                android:layout_width="204dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="16dp"
-                android:gravity="left|center_vertical"
-                android:text="Monthly Salary"
-                app:layout_constraintEnd_toStartOf="@+id/MonthlySalarye"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/BirthYeart" />
+                <EditText
+                    android:id="@+id/FirstNamee"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
 
-            <TextView
-                android:id="@+id/OccupationRatet"
-                android:layout_width="204dp"
-                android:layout_height="44dp"
-                android:layout_marginTop="16dp"
-                android:gravity="left|center_vertical"
-                android:text="Occupation Rate (%)"
-                app:layout_constraintEnd_toStartOf="@+id/Occupationratee"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/MonthlySalaryt" />
 
-            <TextView
-                android:id="@+id/EmployeeId"
-                android:layout_width="204dp"
-                android:layout_height="47dp"
-                android:layout_marginTop="16dp"
-                android:gravity="left|center_vertical"
-                android:text="Employee Id"
-                app:layout_constraintEnd_toStartOf="@+id/EmployeeIde"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/OccupationRatet" />
+                    android:gravity="left|center_vertical"
+                    android:hint="First Name"
+                    android:inputType="textPersonName" />
 
-            <TextView
-                android:id="@+id/EmployeeTypet"
-                android:layout_width="204dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="16dp"
-                android:gravity="left|center_vertical"
-                android:text="Employee Type"
-                app:layout_constraintEnd_toStartOf="@+id/spinner"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/EmployeeId" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/Vehiclet"
-                android:layout_width="204dp"
-                android:layout_height="57dp"
-                android:layout_marginTop="32dp"
-                android:gravity="left|center_vertical"
-                android:text="Vehicle"
-                app:layout_constraintEnd_toStartOf="@+id/radioGroup2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bugst"
-                tools:ignore="MissingConstraints" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/VehicleModelt"
-                android:layout_width="204dp"
-                android:layout_height="42dp"
-                android:layout_marginTop="24dp"
-                android:gravity="left|center_vertical"
-                android:text="Vehicle Model"
-                app:layout_constraintEnd_toStartOf="@+id/editText7"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+                <TextView
+                    android:id="@+id/LastNamet"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:gravity="left|center_vertical"
+                    android:text="Employee Last Name" />
+
+                <EditText
+                    android:id="@+id/LastNamee"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:gravity="left|center_vertical"
+                    android:hint="Last Name"
+                    android:inputType="textPersonName" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/BirthYeart"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:gravity="left|center_vertical"
+                    android:text="Employee Birth Year" />
+
+                <EditText
+                    android:id="@+id/BirthYeare"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+
+                    android:gravity="left|center_vertical"
+                    android:hint="1901"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/MonthlySalaryt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="Monthly Salary" />
+
+                <EditText
+                    android:id="@+id/MonthlySalarye"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+
+                    android:gravity="left|center_vertical"
+                    android:inputType="numberDecimal"
+
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/OccupationRatet"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:gravity="left|center_vertical"
+                    android:text="Occupation Rate (%)" />
+
+                <EditText
+                    android:id="@+id/Occupationratee"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:inputType="numberDecimal"
+                    android:text="100"
+
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/EmployeeId"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:gravity="left|center_vertical"
+                    android:text="Employee Id" />
+
+                <EditText
+                    android:id="@+id/EmployeeIde"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+
+                    android:gravity="left|center_vertical"
+                    android:hint="101"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/EmployeeTypet"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="Employee Type" />
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:entries="@array/emp_type"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/Vehiclet"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:gravity="left|center_vertical"
+                    android:text="Vehicle" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Car" />
+
+                    <RadioButton
+                        android:id="@+id/motorbikeradio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:text="Motor Bike" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/VehicleModelt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="Vehicle Model" />
+
+                <EditText
+                    android:id="@+id/editText7"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:hint="Honda"
+                    android:inputType="text"
+                    />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/PlateNumbert"
@@ -174,115 +294,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/PlateNumbert" />
 
-            <EditText
-                android:id="@+id/FirstNamee"
-                android:layout_width="204dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:ems="10"
-                android:gravity="left|center_vertical"
-                android:hint="First Name"
-                android:inputType="textPersonName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textRegistration" />
-
-            <EditText
-                android:id="@+id/LastNamee"
-                android:layout_width="204dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:gravity="left|center_vertical"
-                android:hint="Last Name"
-                android:inputType="textPersonName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/LastNamet"
-                app:layout_constraintTop_toBottomOf="@+id/FirstNamee" />
-
-            <EditText
-                android:id="@+id/MonthlySalarye"
-                android:layout_width="204dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:ems="10"
-                android:gravity="left|center_vertical"
-                android:inputType="numberDecimal"
-
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/MonthlySalaryt"
-                app:layout_constraintTop_toBottomOf="@+id/BirthYeare" />
-
-            <EditText
-                android:id="@+id/BirthYeare"
-                android:layout_width="204dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:ems="10"
-                android:gravity="left|center_vertical"
-                android:hint="1901"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/BirthYeart"
-                app:layout_constraintTop_toBottomOf="@+id/LastNamee" />
-
-            <EditText
-                android:id="@+id/Occupationratee"
-                android:layout_width="204dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:ems="10"
-                android:gravity="left|center_vertical"
-                android:inputType="numberDecimal"
-                android:text="100"
-
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/OccupationRatet"
-                app:layout_constraintTop_toBottomOf="@+id/MonthlySalarye" />
-
-            <EditText
-                android:id="@+id/EmployeeIde"
-                android:layout_width="204dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:ems="10"
-                android:gravity="left|center_vertical"
-                android:hint="101"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/EmployeeId"
-                app:layout_constraintTop_toBottomOf="@+id/Occupationratee" />
-
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="204dp"
-                android:layout_height="36dp"
-                android:layout_marginTop="16dp"
-                android:entries="@array/emp_type"
-                android:gravity="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/EmployeeTypet"
-                app:layout_constraintTop_toBottomOf="@+id/EmployeeIde" />
-
-            <EditText
-                android:id="@+id/editText7"
-                android:layout_width="204dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:ems="10"
-                android:gravity="left|center_vertical"
-                android:hint="Honda"
-                android:inputType="text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/VehicleModelt"
-                app:layout_constraintTop_toBottomOf="@+id/editText" />
 
             <Button
                 android:id="@+id/registerbutton"
@@ -419,31 +430,6 @@
                 app:layout_constraintStart_toEndOf="@+id/bugst"
                 app:layout_constraintTop_toBottomOf="@+id/clientse" />
 
-            <RadioGroup
-                android:id="@+id/radioGroup2"
-                android:layout_width="204dp"
-                android:layout_height="62dp"
-                android:layout_marginTop="24dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/Vehiclet"
-                app:layout_constraintTop_toBottomOf="@+id/bugse">
-
-                <RadioButton
-                    android:id="@+id/radioButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="Car" />
-
-                <RadioButton
-                    android:id="@+id/motorbikeradio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="3dp"
-                    android:text="Motor Bike" />
-
-            </RadioGroup>
 
             <TextView
                 android:id="@+id/textView"
@@ -503,7 +489,7 @@
                     android:visibility="visible" />
             </RadioGroup>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
 
     </ScrollView>
