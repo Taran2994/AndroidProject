@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -16,15 +19,21 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     SwipeDetector swipeDetector;
+    EditText search;
     ListView listView;
     ArrayList<Employee> emlist;
     DatabaseHelper mDatabase;
+     EmployeeAdapter empAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = findViewById(R.id.listview);
+        search= findViewById(R.id.searchET);
+
+
 
 
     }
@@ -32,9 +41,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        search.setText("");
 
 
-        emlist = new ArrayList<Employee>();
+
+
+
+
+
+    emlist = new ArrayList<Employee>();
 
         mDatabase = new DatabaseHelper(this);
 
@@ -119,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
             cursor.close();
 
 
-            EmployeeAdapter empAdapter = new EmployeeAdapter(this, R.layout.emp_adapter_layout, emlist);
+             empAdapter = new EmployeeAdapter(this, R.layout.emp_adapter_layout, emlist);
             listView.setAdapter(empAdapter);
 
              swipeDetector = new SwipeDetector();
@@ -152,6 +167,30 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
+
+            search.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+
+
+
+
+                    // Call back the Adapter with current character to Filter
+                    empAdapter.getFilter().filter(s.toString());
+                    System.out.println("Change");
+
+                }
+
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count,int after) {
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+
+                }
+            });
 
 
             }
