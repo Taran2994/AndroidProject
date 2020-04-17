@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     ListView listView;
     ArrayList<Employee> emlist;
     DatabaseHelper mDatabase;
-     EmployeeAdapter empAdapter;
+    EmployeeAdapter empAdapter;
 
 
     @Override
@@ -31,9 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = findViewById(R.id.listview);
-        search= findViewById(R.id.searchET);
-
-
+        search = findViewById(R.id.searchET);
 
 
     }
@@ -44,12 +42,7 @@ public class MainActivity extends AppCompatActivity {
         search.setText("");
 
 
-
-
-
-
-
-    emlist = new ArrayList<Employee>();
+        emlist = new ArrayList<Employee>();
 
         mDatabase = new DatabaseHelper(this);
 
@@ -134,10 +127,10 @@ public class MainActivity extends AppCompatActivity {
             cursor.close();
 
 
-             empAdapter = new EmployeeAdapter(this, R.layout.emp_adapter_layout, emlist);
+            empAdapter = new EmployeeAdapter(this, R.layout.emp_adapter_layout, emlist);
             listView.setAdapter(empAdapter);
 
-             swipeDetector = new SwipeDetector();
+            swipeDetector = new SwipeDetector();
 
             listView.setOnTouchListener(swipeDetector);
 
@@ -152,28 +145,21 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Employee Deleted", Toast.LENGTH_SHORT).show();
 
 
-
                         }
 
-                        }
-                    else {
+                    } else {
                         Intent intent = new Intent(MainActivity.this, EmpDetail.class);
                         intent.putExtra("empID", emlist.get(position).getEmpID());
                         startActivity(intent);
                     }
 
 
-
-
-                    }
-                });
+                }
+            });
 
             search.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-
-
 
 
                     // Call back the Adapter with current character to Filter
@@ -183,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void beforeTextChanged(CharSequence s, int start, int count,int after) {
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 }
 
                 @Override
@@ -193,17 +179,17 @@ public class MainActivity extends AppCompatActivity {
             });
 
 
-            }
-
-
-        }
-
-        public void openn (View view){
-
-            Intent intent = new Intent(this, RegisterationForm.class);
-            startActivity(intent);
-
         }
 
 
     }
+
+    public void openn(View view) {
+
+        Intent intent = new Intent(this, RegisterationForm.class);
+        startActivity(intent);
+
+    }
+
+
+}

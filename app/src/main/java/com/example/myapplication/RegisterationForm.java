@@ -301,7 +301,6 @@ public class RegisterationForm extends AppCompatActivity {
 
 
                 finish();
-                startActivity(getIntent());
                 Toast.makeText(RegisterationForm.this, "Registeration Successful", Toast.LENGTH_SHORT).show();
 
 
